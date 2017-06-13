@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "200420542204",
+    "firebase_url": "https://tatusafety.firebaseio.com",
+    "project_id": "tatusafety",
+    "storage_bucket": "tatusafety.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200420542204:android:11784370ce89b335",
+        "android_client_info": {
+          "package_name": "com.chris.tatusafety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200420542204-6vfkrjsi3rus3po3iapenvit3lthup9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo8ZFSI4LShLppD1sRikQF5cCDFWCR6MQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">Tatu Safety</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="developer_email">chris@thebigzoo.co.ke</string>
+    <string name="FACEBOOK_APP_ID">1569333076412497</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">c6d1c58e6760bbb10fdbf27f38de6f43</string>
+    <string name="ak_login_protocol_scheme">ak1569333076412497</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_report">Report</string>
+    <string name="nav_find_me">Find Me</string>
+    <string name="nav_history">History</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_preferences">Preferences</string>
+    <string name="nav_help">Help</string>
+    <string name="account">Account</string>
+    <string name="id_label">Account ID</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="email_label">Email</string>
+    <string name="name_label">Name</string>
+    <string name="logout_label">Log Out</string>
+    <string name="login_phone_label">Login With Phone</string>
+    <string name="login_email_label">Login With Email</string>
+    <string name="title_activity_find_me">Find Me!</string>
+    <string name="find_me_description">This Feature of Tatu Safety is able to track your location based on your phone\'s GPS. Please ensure you have enabled GPS on your phone.</string>
+    <string name="latitude_header">Latitude:</string>
+    <string name="longitude_header">Longitude:</string>
+    <string name="altitude_header">Altitude(m):</string>
+    <string name="speed_header">Speed(km/h):</string>
+    <string name="location_approximate">Please note that values obtained are approximates.</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New Alerts</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="lat_long_speed_description">Your Location (Longitude and Latitude) and Speed are obtained automatically by Tatu Safety using your phones GPS. Please ensure you have enabled GPS on your phone.</string>
+    <string name="login_anonymously_label">LOGIN ANONYMOUSLY</string>
+
+</resources>

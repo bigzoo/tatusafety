@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/nav_explore" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_report" />
+        <item
+            android:id="@+id/nav_findMe"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/nav_find_me" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/nav_history" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/nav_profile"/>
+    </group>
+
+    <item android:title="@string/nav_settings">
+        <menu>
+            <item
+                android:id="@+id/nav_preferences"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/nav_preferences" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/nav_help" />
+        </menu>
+    </item>
+
+</menu>
