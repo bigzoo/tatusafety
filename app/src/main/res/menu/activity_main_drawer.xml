@@ -7,17 +7,18 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/nav_explore" />
         <item
-            android:id="@+id/nav_report"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/nav_report" />
-        <item
             android:id="@+id/nav_findMe"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/nav_find_me" />
         <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_report" />
+
+        <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/nav_history" />
+            android:title="My reports" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_menu_manage"
