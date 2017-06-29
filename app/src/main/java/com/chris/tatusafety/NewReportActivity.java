@@ -149,11 +149,11 @@ public class NewReportActivity extends FragmentActivity{
         final String County = county.getText().toString();
         final String Extras = extras.getText().toString();
         final String Status = "unsynced";
-        if (speed<60) {
-            Log.d("DATE PICKED",Date);
-            Toast.makeText(this, "You cannot submit report with a speed value less than 60!", Toast.LENGTH_SHORT).show();
-        }
-        else {
+//        if (speed<0) {
+//            Log.d("DATE PICKED",Date);
+//            Toast.makeText(this, "You cannot submit report with a speed value less than 60!", Toast.LENGTH_SHORT).show();
+//        }
+//        else {
             Report report = new Report(null,Latitude,Longitude,Date,Time,Road,Sacco,Speed,Plates,County,Extras,Status);
             Database db = new Database(this);
             db.insertReport(report);
@@ -174,6 +174,6 @@ public class NewReportActivity extends FragmentActivity{
 
 
 
-        }
+//        }
     }
 }
