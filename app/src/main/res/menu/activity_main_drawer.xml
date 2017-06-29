@@ -3,25 +3,27 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:title="Stages"
             android:id="@+id/nav_explore"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/nav_explore" />
+            android:icon="@drawable/ic_directions">
+
+        </item>
         <item
             android:id="@+id/nav_findMe"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_my_location"
             android:title="@string/nav_find_me" />
         <item
             android:id="@+id/nav_report"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_action_warning"
             android:title="@string/nav_report" />
 
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_mail_outline"
             android:title="My reports" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_person_pin"
             android:title="@string/nav_profile"/>
     </group>
 
