@@ -158,6 +158,10 @@ public class MainActivity extends AppCompatActivity
             Intent profile = new Intent(this, AccountActivity.class);
             startActivity(profile);
         }
+        else if (id == R.id.finds) {
+            Intent other = new Intent(this, FindMeActivity.class);
+            startActivity(other);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
