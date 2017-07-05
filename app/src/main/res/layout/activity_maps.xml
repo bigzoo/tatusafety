@@ -1,0 +1,70 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.chris.tatusafety.MapsActivity" >
+
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/etOrigin"
+android:hint="Enter origin address"/>
+
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/etDestination"
+android:hint="Enter destination address"/>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Find Path"
+    android:id="@+id/btnFindPath"/>
+
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"/>
+
+<TextView
+    android:layout_marginLeft="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0 km"
+    android:id="@+id/tvDistance" />
+
+<ImageView
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:padding="5dp" />
+
+<TextView
+    android:layout_marginLeft="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0 min"
+    android:id="@+id/tvDuration" />
+
+</LinearLayout>
+
+<fragment
+android:id="@+id/map"
+android:name="com.google.android.gms.maps.SupportMapFragment"
+android:layout_width="match_parent"
+android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+

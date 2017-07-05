@@ -107,5 +107,6 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="lat_long_speed_description">Your Location (Longitude and Latitude) and Speed are obtained automatically by Tatu Safety using your phones GPS. Please ensure you have enabled GPS on your phone.</string>
     <string name="login_anonymously_label">LOGIN ANONYMOUSLY</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
