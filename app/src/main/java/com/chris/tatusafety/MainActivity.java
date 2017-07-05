@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_explore) {
-            Intent main = new Intent(this, MainActivity.class);
+            Intent main = new Intent(this, StagesActivity.class);
             startActivity(main);
             finish();
             // Handle the camera action
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(newReport);
 
         } else if (id == R.id.nav_findMe) {
-            Intent findMe = new Intent(this, FindMeActivity.class);
+            Intent findMe = new Intent(this, MapsActivity.class);
             startActivity(findMe);
 
         } else if (id == R.id.nav_history) {
@@ -151,6 +151,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(settings);
 
         } else if (id == R.id.nav_help) {
+            Intent main = new Intent(this,MainActivity.class);
+            startActivity(main);
 
         } else if (id == R.id.nav_profile) {
             Intent profile = new Intent(this, AccountActivity.class);
