@@ -92,8 +92,12 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".SpeedActivity"></activity>
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".SpeedActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 
 </manifest>
