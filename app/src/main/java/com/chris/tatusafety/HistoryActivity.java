@@ -7,25 +7,34 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class HistoryActivity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class HistoryActivity extends AppCompatActivity implements View.OnClickListener {
     ListView list;
     ArrayList <Report> data;
     CustomListAdapter adapter;
+    @Bind(R.id.stageNav) Button mStageNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        ButterKnife.bind(this);
         list = (ListView) findViewById(R.id.historyList);
         Database db = new Database(this);
         data = db.getAllRecords();
         adapter = new CustomListAdapter(this,data);
         list.setAdapter(adapter);
         registerForContextMenu(list);
+        mStageNav.setOnClickListener(this);
+
     }
     //Context menu.
 
@@ -60,5 +69,15 @@ public class HistoryActivity extends AppCompatActivity {
         }
 
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mStageNav) {
+            Intent intent = new Intent(HistoryActivity.this,StagesActivity.class);
+            startActivity(intent);
+            Toast.makeText(HistoryActivity.this,"CLicked",Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
