@@ -2,6 +2,7 @@ package com.chris.tatusafety;
 
 import android.*;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.support.v4.app.ActivityCompat;
@@ -31,7 +32,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener , View.OnClickListener{
 
     private GoogleMap mMap;
     private Button btnFindPath;
@@ -41,7 +45,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
-
+    @Bind(R.id.mainback) Button mBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
+        ButterKnife.bind(this);
         btnFindPath = (Button) findViewById(R.id.btnFindPath);
         etOrigin = (EditText) findViewById(R.id.etOrigin);
         etDestination = (EditText) findViewById(R.id.etDestination);
@@ -61,6 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sendRequest();
             }
         });
+        mBack.setOnClickListener(this);
 
     }
 
@@ -181,6 +186,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 polylineOptions.add(route.points.get(i));
 
             polylinePaths.add(mMap.addPolyline(polylineOptions));
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mBack) {
+            Intent intent = new Intent(MapsActivity.this,MainActivity.class);
+            startActivity(intent);
+            Toast.makeText(MapsActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
         }
     }
 }

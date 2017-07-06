@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.chris.tatusafety.MapsActivity" >
+    tools:context="com.chris.tatusafety.MapsActivity">
+
 
 <EditText
 android:layout_width="match_parent"
@@ -28,6 +29,13 @@ android:layout_height="wrap_content">
     android:layout_height="wrap_content"
     android:text="Find Path"
     android:id="@+id/btnFindPath"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="take me back to main"
+        android:id="@+id/mainback"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="4dp"/>
 
 <ImageView
     android:layout_width="40dp"

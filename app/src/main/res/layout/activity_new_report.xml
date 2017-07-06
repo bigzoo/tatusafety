@@ -103,7 +103,7 @@
                 android:id="@+id/edtPlates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter NO. plates"
+                android:hint="Enter No. plate"
                 android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
 

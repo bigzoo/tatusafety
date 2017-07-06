@@ -90,14 +90,25 @@
             android:enabled="true"
             android:exported="true" />
 
+
+        <activity
+            android:name=".StagesActivity" />
+        <activity
+            android:name=".StagesListActivity">
+
+        </activity>
+
         <activity
             android:name=".MapsActivity"
+
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme"/>
+             android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity android:name=".SpeedActivity"
             android:theme="@style/AppTheme">
 
         </activity>
+
     </application>
 
 </manifest>
