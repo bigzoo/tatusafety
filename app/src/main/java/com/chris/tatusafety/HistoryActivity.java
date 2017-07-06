@@ -20,20 +20,20 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
     ListView list;
     ArrayList <Report> data;
     CustomListAdapter adapter;
-    @Bind(R.id.stageNav) Button mStageNav;
+//    @Bind(R.id.stageNav) Button mStageNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
         list = (ListView) findViewById(R.id.historyList);
         Database db = new Database(this);
         data = db.getAllRecords();
         adapter = new CustomListAdapter(this,data);
         list.setAdapter(adapter);
         registerForContextMenu(list);
-        mStageNav.setOnClickListener(this);
+//        mStageNav.setOnClickListener(this);
 
     }
     //Context menu.
