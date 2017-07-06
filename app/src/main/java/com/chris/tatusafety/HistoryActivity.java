@@ -73,11 +73,11 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        if (v == mStageNav) {
-            Intent intent = new Intent(HistoryActivity.this,StagesActivity.class);
-            startActivity(intent);
-            Toast.makeText(HistoryActivity.this,"CLicked",Toast.LENGTH_SHORT).show();
-        }
+//        if (v == mStageNav) {
+//            Intent intent = new Intent(HistoryActivity.this,StagesActivity.class);
+//            startActivity(intent);
+//            Toast.makeText(HistoryActivity.this,"CLicked",Toast.LENGTH_SHORT).show();
+//        }
 
     }
 }
