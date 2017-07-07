@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.chris.tatusafety.MainActivity;
 import com.chris.tatusafety.R;
 import com.chris.tatusafety.maps.MapsActivity;
 import com.facebook.accountkit.AccessToken;

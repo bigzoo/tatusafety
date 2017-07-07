@@ -99,7 +99,14 @@
         <activity
             android:name=".UI.SpeedActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".UI.TweetsActivity" />
+        <activity
+            android:name=".UI.TweetsActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.chris.tatusafety.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
         <activity android:name=".UI.SpecificTweetActivity"></activity>
     </application>
 

@@ -1,5 +1,6 @@
 package com.chris.tatusafety.UI;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,6 +41,8 @@ public class TweetsActivity extends AppCompatActivity {
         String traffic = "Ma3Route";
         getTweets(traffic);
 
+//        ActionBar ab = getSupportActionBar();
+//        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     private void getTweets(String topic) {
