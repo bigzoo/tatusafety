@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,14 +7,14 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.chris.tatusafety.Database;
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.UI.Report;
+import com.chris.tatusafety.adapters.CustomListAdapter;
 
 import java.util.ArrayList;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class HistoryActivity extends AppCompatActivity {
     ListView list;
@@ -26,7 +26,6 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        ButterKnife.bind(this);
         list = (ListView) findViewById(R.id.historyList);
         Database db = new Database(this);
         data = db.getAllRecords();
@@ -35,7 +34,7 @@ public class HistoryActivity extends AppCompatActivity {
         registerForContextMenu(list);
 
     }
-    //Context menu.
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {

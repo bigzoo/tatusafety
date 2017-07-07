@@ -1,9 +1,11 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.adapters;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.Toast;
 
+import com.chris.tatusafety.Stage;
+import com.chris.tatusafety.UI.StagesActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +27,7 @@ public class FirebaseStagesAdapter extends FirebaseRecyclerAdapter<Stage,Firebas
 
 
 
-    public FirebaseStagesAdapter(Class<Stage> modelClass, int modelLayout, Class<FirebaseStageViewHolder> viewHolderClass, Query ref,StagesActivity stagesActivity,Context context) {
+    public FirebaseStagesAdapter(Class<Stage> modelClass, int modelLayout, Class<FirebaseStageViewHolder> viewHolderClass, Query ref, StagesActivity stagesActivity, Context context) {
         super(modelClass, modelLayout, viewHolderClass, ref);
         mRef = ref.getRef();
         mContext = context;

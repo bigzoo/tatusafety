@@ -5,7 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
+
+import com.chris.tatusafety.services.SyncService;
 
 public class NetWatcher extends BroadcastReceiver {
     @Override

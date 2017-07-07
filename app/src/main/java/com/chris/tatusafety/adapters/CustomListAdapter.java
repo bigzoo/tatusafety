@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.adapters;
 
 import java.util.ArrayList;
 import android.app.Activity;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.UI.Report;
 
 
 public class CustomListAdapter extends BaseAdapter {

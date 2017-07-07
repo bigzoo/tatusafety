@@ -1,9 +1,12 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.Stage;
 
 /**
  * Created by Josephine Menge on 05/07/2017.

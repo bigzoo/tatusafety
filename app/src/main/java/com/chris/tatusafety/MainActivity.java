@@ -14,9 +14,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.chris.tatusafety.UI.AccountActivity;
+import com.chris.tatusafety.UI.HistoryActivity;
+import com.chris.tatusafety.UI.NewReportActivity;
+import com.chris.tatusafety.UI.Report;
+import com.chris.tatusafety.UI.SettingsActivity;
+import com.chris.tatusafety.UI.StagesActivity;
+import com.chris.tatusafety.UI.TweetsActivity;
+import com.chris.tatusafety.adapters.CustomListAdapter;
+import com.chris.tatusafety.maps.FindMeActivity;
+import com.chris.tatusafety.maps.MapsActivity;
+import com.chris.tatusafety.services.SyncService;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
 import org.json.JSONArray;
@@ -157,9 +168,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_profile) {
             Intent profile = new Intent(this, AccountActivity.class);
             startActivity(profile);
-        }
-        else if (id == R.id.finds) {
+        } else if (id == R.id.finds) {
             Intent other = new Intent(this, FindMeActivity.class);
+            startActivity(other);
+        }
+        else if (id == R.id.twitter) {
+            Intent other = new Intent(this, TweetsActivity.class);
             startActivity(other);
         }
 
