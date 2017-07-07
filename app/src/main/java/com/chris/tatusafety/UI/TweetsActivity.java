@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chris.tatusafety.Modules.Tweet;
 import com.chris.tatusafety.R;
@@ -19,6 +20,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Request;
 import okhttp3.Response;
 
 public class TweetsActivity extends AppCompatActivity {
@@ -38,6 +40,7 @@ public class TweetsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         String traffic = "Ma3Route";
         getTweets(traffic);
+        Toast.makeText(TweetsActivity.this,"Fetching your traffic updates.Chill Kiasi...",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -45,13 +48,14 @@ public class TweetsActivity extends AppCompatActivity {
         final TwitterService twitterService = new TwitterService();
         twitterService.findTweets(topic, new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(Request request, IOException e) {
                 e.printStackTrace();
                 Log.e("Traffic Atcivity","Failed to make API call");
+                Toast.makeText(TweetsActivity.this,"CHeck your internet connection",Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onResponse(Call call, Response response) {
+            public void onResponse(Response response) throws IOException {
                 mTweets = twitterService.processResults(response);
                 TweetsActivity.this.runOnUiThread(new Runnable() {
                     @Override
