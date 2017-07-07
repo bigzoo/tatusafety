@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 //,id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

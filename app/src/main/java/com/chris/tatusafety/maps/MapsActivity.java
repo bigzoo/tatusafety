@@ -1,6 +1,5 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.maps;
 
-import android.*;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,9 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chris.tatusafety.*;
 import com.chris.tatusafety.Modules.DirectionFinder;
 import com.chris.tatusafety.Modules.DirectionFinderListener;
 import com.chris.tatusafety.Modules.Route;
+import com.chris.tatusafety.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -45,7 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
-    @Bind(R.id.mainback) Button mBack;
+    @Bind(com.chris.tatusafety.R.id.mainback) Button mBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,11 +76,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String origin = etOrigin.getText().toString();
         String destination = etDestination.getText().toString();
         if (origin.isEmpty()) {
-            Toast.makeText(this, "Please enter origin address!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Where are you!", Toast.LENGTH_SHORT).show();
             return;
         }
         if (destination.isEmpty()) {
-            Toast.makeText(this, "Please enter destination address!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Where are you going!", Toast.LENGTH_SHORT).show();
             return;
         }
 //    Delegate to DirectionFinder object to executing finding a path
@@ -134,8 +135,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onDirectionFinderStart() {
-        progressDialog = ProgressDialog.show(this, "Please wait.",
-                "Finding direction..!", true);
+        progressDialog = ProgressDialog.show(this, "Tulia Kiasi...",
+                "Acquiring directions from the cloud...!", true);
 
         if (originMarkers != null) {
             for (Marker marker : originMarkers) {

@@ -1,13 +1,13 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.content.Intent;
-import android.os.StrictMode;
-import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.maps.MapsActivity;
 import com.facebook.accountkit.AccessToken;
 import com.facebook.accountkit.AccountKit;
 import com.facebook.accountkit.AccountKitLoginResult;
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void loginSuccess() {
-        Intent mainActivity = new Intent(this,MapsActivity  .class);
+        Intent mainActivity = new Intent(this,TweetsActivity.class);
         startActivity(mainActivity);
         finish();
     }

@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 
 import android.annotation.TargetApi;
@@ -19,6 +19,9 @@ import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
+
+import com.chris.tatusafety.AppCompatPreferenceActivity;
+import com.chris.tatusafety.R;
 
 import java.util.List;
 

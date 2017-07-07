@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.services;
 
 import android.app.Service;
 ;
@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.util.Log;
 ;
 
+import com.chris.tatusafety.Database;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;

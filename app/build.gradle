@@ -18,6 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'TWITTER_CONSUMER_KEY', TwitterConsumerKey
+        it.buildConfigField 'String', 'TWITTER_CONSUMER_SECRET', TwitterConsumerSecret
+        it.buildConfigField 'String', 'TWITTER_TOKEN_SECRET', TwitterTokenSecret
+        it.buildConfigField 'String', 'TWITTER_TOKEN', TwitterToken
+    }
 }
 
 dependencies {
@@ -45,5 +51,8 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:11.0.2'
     compile 'com.jakewharton:butterknife:7.0.1'
     testCompile 'junit:junit:4.12'
+    compile 'org.parceler:parceler-api:1.1.6'
+    compile 'se.akerfeldt:okhttp-signpost:1.1.0'
+    compile 'oauth.signpost:signpost-core:1.2.1.2'
 }
 apply plugin: 'com.google.gms.google-services'

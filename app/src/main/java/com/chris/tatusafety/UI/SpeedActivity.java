@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.content.Context;
 import android.location.Location;
@@ -7,6 +7,8 @@ import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.chris.tatusafety.R;
 
 public class SpeedActivity extends AppCompatActivity implements LocationListener{
 

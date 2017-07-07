@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
@@ -21,7 +21,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Console;
+import com.chris.tatusafety.Database;
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.TimePickerFragment;
+import com.chris.tatusafety.services.SyncService;
+
 import java.util.Calendar;
 
 public class NewReportActivity extends FragmentActivity{

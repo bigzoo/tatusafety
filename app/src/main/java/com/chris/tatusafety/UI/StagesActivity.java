@@ -1,13 +1,14 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.Stage;
+import com.chris.tatusafety.adapters.FirebaseStageViewHolder;
+import com.chris.tatusafety.adapters.FirebaseStagesAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;

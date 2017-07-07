@@ -1,7 +1,9 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.chris.tatusafety.R;
 
 import butterknife.Bind;
 

@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 
 import android.content.Intent;
@@ -8,17 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.facebook.AccessToken;
+import com.chris.tatusafety.R;
 import com.facebook.Profile;
-import com.facebook.ProfileTracker;
 import com.facebook.accountkit.Account;
 import com.facebook.accountkit.AccountKit;
 import com.facebook.accountkit.AccountKitCallback;
 import com.facebook.accountkit.AccountKitError;
 import com.facebook.accountkit.PhoneNumber;
-import com.facebook.login.LoginManager;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
