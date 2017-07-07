@@ -16,6 +16,10 @@
             android:id="@+id/nav_report"
             android:icon="@drawable/ic_action_warning"
             android:title="@string/nav_report" />
+        <item
+            android:id="@+id/twitter"
+            android:icon="@drawable/ic_action_twitter"
+            android:title="Traffic Updates" />
 
         <item
             android:id="@+id/nav_history"
@@ -25,10 +29,7 @@
             android:id="@+id/finds"
             android:icon="@drawable/ic_mail_outline"
             android:title="other find me" />
-        <item
-            android:id="@+id/twitter"
-            android:icon="@drawable/ic_mail_outline"
-            android:title="Traffic Updates" />
+
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person_pin"

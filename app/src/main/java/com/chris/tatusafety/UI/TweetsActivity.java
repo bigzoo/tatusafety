@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chris.tatusafety.Modules.Tweet;
 import com.chris.tatusafety.R;
@@ -40,6 +41,7 @@ public class TweetsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         String traffic = "Ma3Route";
         getTweets(traffic);
+        Toast.makeText(TweetsActivity.this,"Fetching your traffic updates.Chill Kiasi...",Toast.LENGTH_SHORT).show();
 
 //        ActionBar ab = getSupportActionBar();
 //        ab.setDisplayHomeAsUpEnabled(true);
@@ -52,6 +54,7 @@ public class TweetsActivity extends AppCompatActivity {
             public void onFailure(Request request, IOException e) {
                 e.printStackTrace();
                 Log.e("Traffic Atcivity","Failed to make API call");
+                Toast.makeText(TweetsActivity.this,"CHeck your internet connection",Toast.LENGTH_SHORT).show();
             }
 
             @Override

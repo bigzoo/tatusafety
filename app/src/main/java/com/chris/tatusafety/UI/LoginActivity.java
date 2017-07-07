@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void loginSuccess() {
-        Intent mainActivity = new Intent(this,TweetsActivity.class);
+        Intent mainActivity = new Intent(this,MainActivity.class);
         startActivity(mainActivity);
         finish();
     }
