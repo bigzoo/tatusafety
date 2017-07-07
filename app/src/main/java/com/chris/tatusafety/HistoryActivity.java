@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class HistoryActivity extends AppCompatActivity implements View.OnClickListener {
+public class HistoryActivity extends AppCompatActivity {
     ListView list;
     ArrayList <Report> data;
     CustomListAdapter adapter;
-    @Bind(R.id.stageNav) Button mStageNav;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
         adapter = new CustomListAdapter(this,data);
         list.setAdapter(adapter);
         registerForContextMenu(list);
-        mStageNav.setOnClickListener(this);
 
     }
     //Context menu.
@@ -71,13 +70,5 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
         return super.onContextItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
-//        if (v == mStageNav) {
-//            Intent intent = new Intent(HistoryActivity.this,StagesActivity.class);
-//            startActivity(intent);
-//            Toast.makeText(HistoryActivity.this,"CLicked",Toast.LENGTH_SHORT).show();
-//        }
 
-    }
 }
