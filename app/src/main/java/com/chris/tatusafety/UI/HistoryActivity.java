@@ -33,7 +33,6 @@ public class HistoryActivity extends AppCompatActivity {
         list.setAdapter(adapter);
         registerForContextMenu(list);
 
-
     }
 
 

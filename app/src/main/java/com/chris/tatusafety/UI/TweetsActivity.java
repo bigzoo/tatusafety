@@ -69,7 +69,10 @@ public class TweetsActivity extends AppCompatActivity {
                 });
 
             }
-        });
+            });
+
+            }
+
     }
 
-}
+
