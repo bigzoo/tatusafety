@@ -195,7 +195,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (v == mBack) {
             Intent intent = new Intent(MapsActivity.this,MainActivity.class);
             startActivity(intent);
-            Toast.makeText(MapsActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
         }
     }
 }
