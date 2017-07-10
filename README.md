@@ -5,12 +5,12 @@ An android application that helps report recklessly driven matatus in Kenya by g
 
 ## Contributors/Authors
    > [Joseph Kilasi] -https://github.com/Yonkokilasi 
-    > [Vivian] - https://github.com/Viv-Iam
+   > [Vivian] - https://github.com/Viv-Iam
 
 
 ## Installation
   1. First clone the repository or fork it.
-  2 . Navigate to android studio and open the project.
+  2. Navigate to android studio and open the project.
   Wait for it to build.
   3. You should receive some errors .
   4. From there navigate to or create a gradle.properties folder.
@@ -20,7 +20,8 @@ An android application that helps report recklessly driven matatus in Kenya by g
   6. From there follow this guide [https://firebase.google.com/docs/android/setup].
   7. After downloading the google-services.json file add it to the project.
   8. From there clean and build the project.
-  **Congratulations you have successfully cloned the project**
+  
+  ### **Congratulations you have successfully cloned the project**
 
 ### Technologies
 * Android
