@@ -4,8 +4,8 @@
 An android application that helps report recklessly driven matatus in Kenya by giving the common citizen a platform that they can use to share their different experiences and report the specific matatus.
 
 ## Contributors/Authors
-    @Vivian , []
-    @Yonko , [https://github.com/Yonkokilasi]
+    https://github.com - Yonkokilasi
+    @Yonko , []
 
 
 ## Installation
