@@ -32,7 +32,7 @@ public class StagesActivity extends AppCompatActivity {
         String search = "kencom";
     private void setUpFirebaseAdapter() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        Query query = reference.child("stops").equalTo(search);
+        Query query = reference.child("stops").child("0");
         mFirebaseAdapter = new FirebaseStagesAdapter(Stage.class, R.layout.stage_list_item,FirebaseStageViewHolder.class,query,this,this);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
