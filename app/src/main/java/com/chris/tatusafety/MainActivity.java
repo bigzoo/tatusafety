@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.UI.AccountActivity;
@@ -34,14 +35,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+
+import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ListView list;
     CustomListAdapter adapter;
     ArrayList<Report> data;
     SwipeRefreshLayout swipeRefresh;
+    @Bind(R.id.tvRoad) TextView mRoadName;
+    @Bind(R.id.tvDate) TextView mDateText;
+    @Bind(R.id.tvSacco) TextView mSacco;
+    @Bind(R.id.tvTime) TextView mTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,7 +207,6 @@ public class MainActivity extends AppCompatActivity
                 try {
                     JSONArray array = new JSONArray(s);
                     for (int x = 0; x < array.length(); x++) {
-
                         JSONObject obj = array.getJSONObject(x);
                         String road = obj.getString("road");
                         String sacco = obj.getString("sacco");
@@ -208,7 +214,6 @@ public class MainActivity extends AppCompatActivity
                         String time = obj.getString("time");
                         Report r = new Report(date, time, road, sacco);
                         data.add(r);
-
                     }
                     adapter.notifyDataSetChanged();
 
