@@ -101,13 +101,17 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".UI.TweetsActivity"
-            android:theme="@style/AppTheme"
-            android:parentActivityName="com.chris.tatusafety.MainActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.chris.tatusafety.MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chris.tatusafety.MainActivity" />
         </activity>
-        <activity android:name=".UI.SpecificTweetActivity"></activity>
+        <activity android:name=".UI.SpecificTweetActivity" />
+        <activity android:name=".UI.HelpActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.UI.AccountActivity;
+import com.chris.tatusafety.UI.HelpActivity;
 import com.chris.tatusafety.UI.HistoryActivity;
 import com.chris.tatusafety.UI.NewReportActivity;
 import com.chris.tatusafety.UI.Report;
@@ -169,8 +170,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(settings);
 
         } else if (id == R.id.nav_help) {
-            Intent main = new Intent(this,MainActivity.class);
-            startActivity(main);
+            Intent help = new Intent(this,HelpActivity.class);
+            startActivity(help);
 
         } else if (id == R.id.nav_profile) {
             Intent profile = new Intent(this, AccountActivity.class);

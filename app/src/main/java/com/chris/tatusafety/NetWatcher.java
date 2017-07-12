@@ -18,7 +18,6 @@ public class NetWatcher extends BroadcastReceiver {
         {
             if(info.isConnected())
             {
-                Toast.makeText(context,"Tuliwasha sync service",Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(context,SyncService.class);
                 context.startService(i);
             }

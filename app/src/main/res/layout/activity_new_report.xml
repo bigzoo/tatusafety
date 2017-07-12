@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/blue">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,12 +19,12 @@
             android:id="@+id/tvLatitudeAuto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Your Current Latitude is: "/>
+            />
         <TextView
             android:id="@+id/tvLongitudeAuto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Your Current Longitude is: "/>
+            />
         <TextView
             android:id="@+id/tvSpeedAuto"
             android:layout_width="match_parent"
@@ -44,6 +45,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:hint="Set Date"
+                android:gravity="center"
+                android:textSize="20sp"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +62,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="time"
-                android:hint="Enter the time" />
+                android:hint="Click to enter the time"
+                android:drawableTop="@drawable/ic_action_clock"
+                android:gravity="center"
+                android:drawablePadding="0dp"
+                />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Road Label -->
@@ -74,7 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter the road name"
-                android:inputType="textCapWords" />
+                android:inputType="textCapWords"
+                android:gravity="center"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Sacco Label -->
@@ -89,7 +97,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter the sacco name"
-                android:inputType="textCapWords" />
+                android:inputType="textCapWords"
+                android:gravity="center"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Plates Label -->
@@ -104,6 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter No. plate"
+                android:gravity="center"
                 android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
 
@@ -119,6 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter the county"
+                android:gravity="center"
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -132,7 +143,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:hint="Additional information"/>
+                android:hint="Description"
+                android:gravity="center"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Report Button -->
