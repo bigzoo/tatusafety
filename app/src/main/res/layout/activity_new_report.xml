@@ -73,11 +73,7 @@
                 android:id="@+id/edtRoadName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
-                android:hint="Enter name of the road "
-=======
                 android:hint="Enter the road name"
->>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -92,11 +88,8 @@
                 android:id="@+id/edtSacco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
-                android:hint="Enter sacco Name e.g KBS"
-=======
-                android:hint="Enter the sacco name"
->>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
+                android:hint="Enter Sacco Name e.g KBS"
+
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
