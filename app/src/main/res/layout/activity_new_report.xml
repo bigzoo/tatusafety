@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/blue">
 
     <LinearLayout
         android:orientation="vertical"
@@ -43,8 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
-                android:hint="Enter the date"
-                android:layout_gravity="center"
+                android:hint="Date"
+                android:gravity="center"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -60,7 +61,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="time"
-                android:hint="Enter the time" />
+                android:hint="Tap to set the time"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_action_clock"
+                />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Road Label -->
@@ -75,7 +79,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter the road name"
-                android:inputType="textCapWords" />
+                android:inputType="textCapWords"
+                android:gravity="center"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Sacco Label -->
@@ -90,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Sacco Name e.g KBS"
-
+                android:gravity="center"
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -106,6 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter No. plate"
+                android:gravity="center"
                 android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
 
@@ -121,6 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter county e.g Nairobi"
+                android:gravity="center"
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -134,7 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:hint="Additional information"/>
+                android:gravity="center"
+                android:hint="Description of the situation"/>
 
         </android.support.design.widget.TextInputLayout>
 
