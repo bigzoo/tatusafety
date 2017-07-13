@@ -1,0 +1,78 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.chris.tatusafety.maps.MapsActivity">
+
+
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/etOrigin"
+android:hint="Where are you "
+    android:textStyle="italic"/>
+
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/etDestination"
+android:hint="Where are you going"/>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Find the way"
+    android:id="@+id/btnFindPath"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="take me back to main"
+        android:id="@+id/mainback"
+        android:layout_marginTop="0dp"/>
+
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"/>
+
+<TextView
+    android:layout_marginLeft="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0 km"
+    android:id="@+id/tvDistance" />
+
+<ImageView
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:padding="5dp" />
+
+<TextView
+    android:layout_marginLeft="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0 min"
+    android:id="@+id/tvDuration" />
+
+</LinearLayout>
+
+<fragment
+android:id="@+id/map"
+android:name="com.google.android.gms.maps.SupportMapFragment"
+android:layout_width="match_parent"
+android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+

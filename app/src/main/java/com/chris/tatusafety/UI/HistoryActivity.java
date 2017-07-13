@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +9,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.chris.tatusafety.Database;
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.UI.Report;
+import com.chris.tatusafety.adapters.CustomListAdapter;
+
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
     ListView list;
     ArrayList <Report> data;
     CustomListAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +32,9 @@ public class HistoryActivity extends AppCompatActivity {
         adapter = new CustomListAdapter(this,data);
         list.setAdapter(adapter);
         registerForContextMenu(list);
+
     }
-    //Context menu.
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -61,4 +68,6 @@ public class HistoryActivity extends AppCompatActivity {
 
         return super.onContextItemSelected(item);
     }
+
+
 }

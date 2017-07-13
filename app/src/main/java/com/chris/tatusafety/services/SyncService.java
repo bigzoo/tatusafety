@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.services;
 
 import android.app.Service;
 ;
@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.util.Log;
 ;
 
+import com.chris.tatusafety.Database;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -26,8 +27,9 @@ public class SyncService extends Service{
         String url="http://www.thebigzoo.co.ke/tatusafety/api.php";
         final Database db = new Database(this);
         String json = db.fetchUnsyncedRecords();
-        RequestParams params = new RequestParams();
+        final RequestParams params = new RequestParams();
         params.put("json",  json);
+        Log.d("PARAMS",params.toString());
         AsyncHttpClient client =new AsyncHttpClient();
         client.post(url, params, new AsyncHttpResponseHandler() {
             @Override
@@ -40,9 +42,9 @@ public class SyncService extends Service{
                     for (int i=0; i<array.length(); i++)
                     {
                         JSONObject obj = array.getJSONObject(i);
-                        String id = obj.getString("id");
-                        db.update(id);
-                        Log.d("RESPONSE_ID", id);
+                        String uuid = obj.getString("uuid");
+                        db.update(uuid);
+                        Log.d("RESPONSE_ID", uuid);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

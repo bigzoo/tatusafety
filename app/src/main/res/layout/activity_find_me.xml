@@ -4,7 +4,7 @@
     android:id="@+id/view_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chris.tatusafety.FindMeActivity">
+    tools:context="com.chris.tatusafety.maps.FindMeActivity">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -22,7 +22,7 @@
         map:layout_constraintLeft_toLeftOf="parent"
         map:layout_constraintRight_toRightOf="parent"
         map:layout_constraintTop_toTopOf="parent"
-        tools:context="com.chris.tatusafety.FindMeActivity"
+        tools:context="com.chris.tatusafety.maps.FindMeActivity"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         map:layout_constraintVertical_bias="0.703" />

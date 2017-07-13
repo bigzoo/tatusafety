@@ -1,12 +1,21 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 //,id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Report {
-    public String id, latitude, longitude, date, time, road, sacco, speed, plates, county, extras, status ;
+    public String id, latitude, longitude, date, time, road, sacco, speed, plates, county, extras, status,uuid ;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public Report(String date, String time, String road, String sacco) {
+
         this.date = date;
         this.time = time;
         this.road = road;
@@ -26,8 +35,9 @@ public class Report {
         this.status =status;
     }
 
-    public Report(String id, String latitude, String longitude, String date, String time, String road, String sacco, String speed, String plates, String county, String extras, String status)
+    public Report(String id, String latitude, String longitude, String date, String time, String road, String sacco, String speed, String plates, String county, String extras, String status,String uuid)
     {
+        this.id = id;
         this.latitude = latitude;
         this.longitude = longitude;
         this.date = date;
@@ -39,6 +49,7 @@ public class Report {
         this.county = county;
         this.extras = extras;
         this.status = status;
+        this.uuid= uuid;
     }
 
     public String getId() {

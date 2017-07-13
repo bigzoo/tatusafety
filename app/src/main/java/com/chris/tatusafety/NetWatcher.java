@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
+import android.widget.Toast;
+
+import com.chris.tatusafety.services.SyncService;
 
 public class NetWatcher extends BroadcastReceiver {
     @Override
@@ -16,6 +18,7 @@ public class NetWatcher extends BroadcastReceiver {
         {
             if(info.isConnected())
             {
+                Toast.makeText(context,"Tuliwasha sync service",Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(context,SyncService.class);
                 context.startService(i);
             }

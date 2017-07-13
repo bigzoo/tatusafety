@@ -14,23 +14,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.chris.tatusafety.UI.AccountActivity;
+import com.chris.tatusafety.UI.HistoryActivity;
+import com.chris.tatusafety.UI.NewReportActivity;
+import com.chris.tatusafety.UI.Report;
+import com.chris.tatusafety.UI.SettingsActivity;
+import com.chris.tatusafety.UI.StagesActivity;
+import com.chris.tatusafety.UI.TweetsActivity;
+import com.chris.tatusafety.adapters.CustomListAdapter;
+import com.chris.tatusafety.maps.FindMeActivity;
+import com.chris.tatusafety.maps.MapsActivity;
+import com.chris.tatusafety.services.SyncService;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+
+import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ListView list;
     CustomListAdapter adapter;
     ArrayList<Report> data;
     SwipeRefreshLayout swipeRefresh;
+    @Bind(R.id.tvRoad) TextView mRoadName;
+    @Bind(R.id.tvDate) TextView mDateText;
+    @Bind(R.id.tvSacco) TextView mSacco;
+    @Bind(R.id.tvTime) TextView mTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +148,7 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_explore) {
-            Intent main = new Intent(this, MainActivity.class);
+            Intent main = new Intent(this, StagesActivity.class);
             startActivity(main);
             finish();
             // Handle the camera action
@@ -139,7 +157,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(newReport);
 
         } else if (id == R.id.nav_findMe) {
-            Intent findMe = new Intent(this, FindMeActivity.class);
+            Intent findMe = new Intent(this, MapsActivity.class);
             startActivity(findMe);
 
         } else if (id == R.id.nav_history) {
@@ -151,10 +169,19 @@ public class MainActivity extends AppCompatActivity
             startActivity(settings);
 
         } else if (id == R.id.nav_help) {
+            Intent main = new Intent(this,MainActivity.class);
+            startActivity(main);
 
         } else if (id == R.id.nav_profile) {
             Intent profile = new Intent(this, AccountActivity.class);
             startActivity(profile);
+        } else if (id == R.id.finds) {
+            Intent other = new Intent(this, FindMeActivity.class);
+            startActivity(other);
+        }
+        else if (id == R.id.twitter) {
+            Intent other = new Intent(this, TweetsActivity.class);
+            startActivity(other);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -180,7 +207,6 @@ public class MainActivity extends AppCompatActivity
                 try {
                     JSONArray array = new JSONArray(s);
                     for (int x = 0; x < array.length(); x++) {
-
                         JSONObject obj = array.getJSONObject(x);
                         String road = obj.getString("road");
                         String sacco = obj.getString("sacco");
@@ -188,7 +214,6 @@ public class MainActivity extends AppCompatActivity
                         String time = obj.getString("time");
                         Report r = new Report(date, time, road, sacco);
                         data.add(r);
-
                     }
                     adapter.notifyDataSetChanged();
 

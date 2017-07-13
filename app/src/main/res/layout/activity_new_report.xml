@@ -73,7 +73,11 @@
                 android:id="@+id/edtRoadName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:hint="Enter name of the road "
+=======
+                android:hint="Enter the road name"
+>>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -88,7 +92,11 @@
                 android:id="@+id/edtSacco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:hint="Enter sacco Name e.g KBS"
+=======
+                android:hint="Enter the sacco name"
+>>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -103,7 +111,11 @@
                 android:id="@+id/edtPlates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:hint="Enter the number plate of the vehicle"
+=======
+                android:hint="Enter No. plate"
+>>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
 
@@ -118,7 +130,11 @@
                 android:id="@+id/edtCounty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:hint="Enter county e.g Nairobi"
+=======
+                android:hint="Enter the county"
+>>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -132,7 +148,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+<<<<<<< HEAD
                 android:hint="Enter and further details"/>
+=======
+                android:hint="Additional information"/>
+>>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
         </android.support.design.widget.TextInputLayout>
 
         <!-- Report Button -->
@@ -142,6 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
+            android:background="@drawable/buttonshape"
             android:padding="12dp"
             android:text="Send Report"/>
 

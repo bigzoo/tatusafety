@@ -1,4 +1,4 @@
-package com.chris.tatusafety;
+package com.chris.tatusafety.UI;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
@@ -21,7 +21,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Console;
+import com.chris.tatusafety.Database;
+import com.chris.tatusafety.R;
+import com.chris.tatusafety.TimePickerFragment;
+import com.chris.tatusafety.services.SyncService;
+
 import java.util.Calendar;
 
 public class NewReportActivity extends FragmentActivity{
@@ -150,12 +154,13 @@ public class NewReportActivity extends FragmentActivity{
         final String County = county.getText().toString();
         final String Extras = extras.getText().toString();
         final String Status = "unsynced";
+        final String Uuid = java.util.UUID.randomUUID().toString();
 //        if (speed<0) {
 //            Log.d("DATE PICKED",Date);
 //            Toast.makeText(this, "You cannot submit report with a speed value less than 60!", Toast.LENGTH_SHORT).show();
 //        }
 //        else {
-            Report report = new Report(null,Latitude,Longitude,Date,Time,Road,Sacco,Speed,Plates,County,Extras,Status);
+            Report report = new Report(null,Latitude,Longitude,Date,Time,Road,Sacco,Speed,Plates,County,Extras,Status,Uuid);
             Database db = new Database(this);
             db.insertReport(report);
             //Toast.makeText(this, "Total Submitted is "+db.countRecords(), Toast.LENGTH_SHORT).show();

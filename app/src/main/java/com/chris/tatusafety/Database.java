@@ -6,13 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
+
+import com.chris.tatusafety.UI.Report;
 import com.google.gson.Gson;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Database extends SQLiteOpenHelper {
 
-    private static final int VERSION = 2;
+    private static final int VERSION = 4;
     private static final String DB_NAME = "tatusafety";
     private static final String ID = "id";
     private static final String LATITUDE = "latitude";
@@ -26,10 +28,11 @@ public class Database extends SQLiteOpenHelper {
     private static final String COUNTY = "county";
     private static final String EXTRAS = "extras";
     private static final String STATUS = "status";
+    private static final String UUID = "uuid";
 
 
     private static final String TABLE = "reports";
-Context context;
+    Context context;
     public Database(Context context) {
         super(context, DB_NAME, null, VERSION);
         this.context=context;
@@ -48,7 +51,8 @@ Context context;
                 + " plates TEXT, "
                 + " county TEXT, "
                 + " extras TEXT, "
-                + " status TEXT)";
+                + " status TEXT, "
+                + " uuid TEXT)";
         db.execSQL(sql);
     }
     @Override
@@ -67,11 +71,11 @@ Context context;
                 + " plates TEXT, "
                 + " county TEXT, "
                 + " extras TEXT, "
-                + " status TEXT)";
+                + " status TEXT, "
+                + " uuid TEXT)";
         db.execSQL(sql2);
     }
     public void insertReport(Report report) {
-        //Toast.makeText(context, ""+report.getCounty(), Toast.LENGTH_SHORT).show();
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ID,report.getId());
@@ -86,13 +90,14 @@ Context context;
         values.put(COUNTY, report.getCounty());
         values.put(EXTRAS, report.getExtras());
         values.put(STATUS, "unsynced");
+        values.put(UUID,report.getUuid());
         db.insert(TABLE, null, values);
         db.close();
     }
     public String fetchUnsyncedRecords(){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Report> data=new ArrayList<Report>();
-        Cursor cursor=db.rawQuery("SELECT * FROM reports", null);
+        Cursor cursor=db.rawQuery("SELECT * FROM reports WHERE status='"+"unsynced"+"'", null);
         Log.d("TOTAL_DATA","FETCHED "+cursor.getCount()) ;
         if(cursor.moveToFirst()){
             do
@@ -109,7 +114,9 @@ Context context;
                 String county= cursor.getString(9);
                 String extras= cursor.getString(10);
                 String status= cursor.getString(11);
-                data.add(new Report(id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status));
+                String uuid= cursor.getString(12);
+                data.add(new Report(id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status,uuid));
+//                Log.d('DATA',data);
 
             }while (cursor.moveToNext());
         }
@@ -131,11 +138,13 @@ Context context;
         }
         return "";
     }
-    public void update(String id)
+    public void update(String uuid)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("UPDATE reports SET status='synced' WHERE id='"+id+"'", null);
+        Cursor cursor =db.rawQuery("UPDATE reports SET status='synced' WHERE uuid='"+uuid+"'", null);
+        if (cursor.moveToFirst()){
 
+        }
     }
 
 
@@ -165,7 +174,8 @@ Context context;
                 String county= cursor.getString(9);
                 String extras= cursor.getString(10);
                 String status= cursor.getString(11);
-                data.add(new Report(id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status));
+                String uuid = cursor.getString(12);
+                data.add(new Report(id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status,uuid));
 
             }while (cursor.moveToNext());
         } return data;

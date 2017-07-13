@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.chris.tatusafety">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission-sdk-23 android:name="android.permission.INTERNET"/>
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -37,7 +39,7 @@
             android:theme="@style/AppLoginTheme"
             tools:replace="android:theme" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".UI.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,7 +57,7 @@
                 <data android:scheme="@string/ak_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".AccountActivity" />
+        <activity android:name=".UI.AccountActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -69,22 +71,43 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".FindMeActivity"
+            android:name=".maps.FindMeActivity"
             android:label="@string/title_activity_find_me" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".UI.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".NewReportActivity" />
-        <activity android:name=".HistoryActivity"></activity>
-        <receiver android:name=".NetWatcher" >
+        <activity android:name=".UI.NewReportActivity" />
+        <activity android:name=".UI.HistoryActivity" />
+
+        <receiver android:name=".NetWatcher">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
         <service
-            android:name=".SyncService"
+            android:name=".services.SyncService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
+
+        <activity android:name=".UI.StagesActivity" />
+        <activity android:name=".UI.StagesListActivity" />
+        <activity
+            android:name=".maps.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.SpeedActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.TweetsActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.chris.tatusafety.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
+        <activity android:name=".UI.SpecificTweetActivity"></activity>
     </application>
 
 </manifest>
