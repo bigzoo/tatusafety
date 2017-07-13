@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
+        android:paddingTop="33dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:weightSum="1">
@@ -18,7 +18,7 @@
             android:id="@+id/tvLatitudeAuto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Your Current Latitude is: "/>
+            android:text="Your Current Latitude is: "/>]
         <TextView
             android:id="@+id/tvLongitudeAuto"
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
-                android:hint="Set Date"
+                android:hint="Enter the date"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="time"
-                android:hint="Set Time" />
+                android:hint="Enter the time" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Road Label -->
@@ -73,7 +73,7 @@
                 android:id="@+id/edtRoadName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Road name?"
+                android:hint="Enter name of the road "
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -88,7 +88,7 @@
                 android:id="@+id/edtSacco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Sacco Name?"
+                android:hint="Enter sacco Name e.g KBS"
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -103,7 +103,7 @@
                 android:id="@+id/edtPlates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Car Plates?"
+                android:hint="Enter the number plate of the vehicle"
                 android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
 
@@ -118,7 +118,7 @@
                 android:id="@+id/edtCounty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="County?"
+                android:hint="Enter county e.g Nairobi"
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -132,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:hint="Exra info?"/>
+                android:hint="Enter and further details"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Report Button -->
