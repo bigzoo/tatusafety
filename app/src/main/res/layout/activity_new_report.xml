@@ -18,12 +18,12 @@
             android:id="@+id/tvLatitudeAuto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Your Current Latitude is: "/>]
+            />]
         <TextView
             android:id="@+id/tvLongitudeAuto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Your Current Longitude is: "/>
+            />
         <TextView
             android:id="@+id/tvSpeedAuto"
             android:layout_width="match_parent"
@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:hint="Enter the date"
+                android:layout_gravity="center"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -104,11 +105,7 @@
                 android:id="@+id/edtPlates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
-                android:hint="Enter the number plate of the vehicle"
-=======
                 android:hint="Enter No. plate"
->>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
 
@@ -123,11 +120,7 @@
                 android:id="@+id/edtCounty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:hint="Enter county e.g Nairobi"
-=======
-                android:hint="Enter the county"
->>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
@@ -141,11 +134,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-<<<<<<< HEAD
-                android:hint="Enter and further details"/>
-=======
                 android:hint="Additional information"/>
->>>>>>> 4590c27aa190cae5c48f34e8fc4d41194291a26c
+
         </android.support.design.widget.TextInputLayout>
 
         <!-- Report Button -->
