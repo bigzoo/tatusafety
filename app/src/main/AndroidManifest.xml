@@ -108,9 +108,15 @@
                 android:value="com.chris.tatusafety.MainActivity" />
         </activity>
         <activity android:name=".UI.SpecificTweetActivity" />
-        <activity android:name=".UI.HelpActivity"
-            android:theme="@style/AppTheme">
+        <activity
+            android:name=".UI.HelpActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
