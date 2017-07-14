@@ -1,9 +1,12 @@
 package com.chris.tatusafety.UI;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.MainActivity;
@@ -16,8 +19,14 @@ import com.facebook.accountkit.ui.AccountKitActivity;
 import com.facebook.accountkit.ui.AccountKitConfiguration;
 import com.facebook.accountkit.ui.LoginType;
 
+import butterknife.Bind;
+
 public class LoginActivity extends AppCompatActivity {
     public static int APP_REQUEST_CODE = 1;
+    @Bind(R.id.phone_login_button) Button mPhone;
+    @Bind(R.id.title) TextView mTitle;
+    @Bind(R.id.email_login_button) Button mLogin;
+    @Bind(R.id.anonymous_login_button) Button mAnony;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +34,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //check for an access token
         AccessToken accessToken = AccountKit.getCurrentAccessToken();
+
+
         if (accessToken != null)
         {
             //if user was logged in it will not be null hence log in into application
             loginSuccess();
         }
-
     }
 
     @Override

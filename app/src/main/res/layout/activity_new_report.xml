@@ -41,13 +41,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/tvDateView"
+            <EditText
+                android:id="@+id/tvDateView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:hint="Date"
                 android:gravity="center"
                 />
+
         </android.support.design.widget.TextInputLayout>
 
         <!-- Time Label -->
@@ -62,10 +64,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="time"
-     android:hint="Tap to set the time"
+                android:hint="Tap to set the time"
                 android:gravity="center"
-                android:drawableTop="@drawable/ic_action_clock"
-                />
+                android:drawableTop="@drawable/ic_action_clock"/>
+
         </android.support.design.widget.TextInputLayout>
 
         <!-- Road Label -->
@@ -95,10 +97,10 @@
                 android:id="@+id/edtSacco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter the sacco name"
-                android:inputType="textCapWords"
-                android:gravity="center"/>
 
+                android:hint="Enter Sacco Name e.g KBS"
+                android:gravity="center"
+                android:inputType="textCapWords" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -144,9 +146,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:hint="Description"
-                android:gravity="center"/>
 
+                android:hint="Description of the situation"
+                android:gravity="center"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Report Button -->

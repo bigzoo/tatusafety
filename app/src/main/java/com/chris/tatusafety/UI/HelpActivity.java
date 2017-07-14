@@ -1,10 +1,13 @@
 package com.chris.tatusafety.UI;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.MainActivity;
@@ -18,9 +21,10 @@ import butterknife.ButterKnife;
 public class HelpActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.find) Button mFindButton;
     @Bind(R.id.stages) Button mStagesButton;
-//    @Bind(R.id.twitter) Button mTwitterButton;
+    @Bind(R.id.twitterUpdates) Button mUpdates;
     @Bind(R.id.main) Button mMainActivity;
     @Bind(R.id.report) Button mReportButton;
+    @Bind(R.id.mainView) RelativeLayout mMainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +33,17 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
         mFindButton.setOnClickListener(this);
         mStagesButton.setOnClickListener(this);
-//        mTwitterButton.setOnClickListener(this);
         mMainActivity.setOnClickListener(this);
+        mUpdates.setOnClickListener(this);
         mReportButton.setOnClickListener(this);
+        Toast.makeText(HelpActivity.this,"Here guide to using this application",Toast.LENGTH_SHORT).show();
+        Typeface man = Typeface.createFromAsset(getAssets(),"fonts/PT_Sans-Web-Regular.ttf.ttf");
+        mFindButton.setTypeface(man);
+        mUpdates.setTypeface(man);
+        mStagesButton.setTypeface(man);
+        mMainActivity.setTypeface(man);
+        mReportButton.setTypeface(man);
+
     }
 
     @Override
@@ -52,9 +64,16 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(HelpActivity.this,"Travelling ...",Toast.LENGTH_SHORT).show();
         }
         if (v == mReportButton) {
-            Intent intent = new Intent(HelpActivity.this, Report.class);
+            Intent intent = new Intent(HelpActivity.this, NewReportActivity.class);
             startActivity(intent);
             Toast.makeText(HelpActivity.this,"Travelling ...",Toast.LENGTH_SHORT).show();
+        }
+        if (v == mUpdates) {
+            Intent intent = new Intent(HelpActivity.this, TweetsActivity.class);
+            startActivity(intent);
+            Toast.makeText(HelpActivity.this,"Travelling ...",Toast.LENGTH_SHORT).show();
+
+
         }
 
 

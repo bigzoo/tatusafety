@@ -1,13 +1,14 @@
 package com.chris.tatusafety.Modules;
 
+import android.text.format.DateFormat;
+
 import org.parceler.Parcel;
 
 import java.util.ArrayList;
 
 /**
- * Created by Josephine Menge on 06/07/2017.
+ * Created by Josephine Menge on 03/07/2017.
  */
-
 @Parcel
 public class Tweet {
 
@@ -47,4 +48,3 @@ public class Tweet {
         return mDate;
     }
 }
-
