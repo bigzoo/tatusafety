@@ -25,10 +25,10 @@
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_mail_outline"
             android:title="My reports" />
-        <item
-            android:id="@+id/finds"
-            android:icon="@drawable/ic_mail_outline"
-            android:title="other find me" />
+        <!--<item-->
+            <!--android:id="@+id/finds"-->
+            <!--android:icon="@drawable/ic_mail_outline"-->
+            <!--android:title="other find me" />-->
 
         <item
             android:id="@+id/nav_profile"

@@ -24,6 +24,7 @@ import com.chris.tatusafety.UI.HistoryActivity;
 import com.chris.tatusafety.UI.NewReportActivity;
 import com.chris.tatusafety.UI.Report;
 import com.chris.tatusafety.UI.SettingsActivity;
+import com.chris.tatusafety.UI.SpecificTweetActivity;
 import com.chris.tatusafety.UI.StagesActivity;
 import com.chris.tatusafety.UI.TweetsActivity;
 import com.chris.tatusafety.adapters.CustomListAdapter;
@@ -176,10 +177,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_profile) {
             Intent profile = new Intent(this, AccountActivity.class);
             startActivity(profile);
-        } else if (id == R.id.finds) {
-            Intent other = new Intent(this, FindMeActivity.class);
-            startActivity(other);
         }
+//        } else if (id == R.id.finds) {
+//            Intent other = new Intent(this, FindMeActivity.class);
+//            startActivity(other);
+//        }
         else if (id == R.id.twitter) {
             Intent other = new Intent(this, TweetsActivity.class);
             startActivity(other);

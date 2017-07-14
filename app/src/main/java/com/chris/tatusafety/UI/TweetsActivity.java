@@ -19,12 +19,14 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Request;
 import okhttp3.Response;
 
 public class TweetsActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.tweetsRecyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.tweetsRecyclerView)
+    RecyclerView mRecyclerView;
 
     public static final String TAG = TweetsActivity.class.getSimpleName();
 
@@ -38,7 +40,7 @@ public class TweetsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         String traffic = "Ma3Route";
         getTweets(traffic);
-        Toast.makeText(TweetsActivity.this,"Fetching your traffic updates.Chill Kiasi...",Toast.LENGTH_SHORT).show();
+        Toast.makeText(TweetsActivity.this, "Fetching your traffic updates.Chill Kiasi...", Toast.LENGTH_SHORT).show();
 
 
 //        ActionBar ab = getSupportActionBar();
@@ -49,33 +51,39 @@ public class TweetsActivity extends AppCompatActivity {
         final TwitterService twitterService = new TwitterService();
         twitterService.findTweets(topic, new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(Request request, IOException e) {
                 e.printStackTrace();
-                Log.e("Traffic Activity","Failed to make API call");
-                Toast.makeText(TweetsActivity.this,"Check your internet connection",Toast.LENGTH_SHORT).show();
+                Log.e("Traffic Activity", "Failed to make API call");
+                Toast.makeText(TweetsActivity.this, "Check your internet connection", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
-            public void onResponse(Call call,Response response) throws IOException {
+            public void onResponse(Response response) throws IOException {
                 mTweets = twitterService.processResults(response);
                 TweetsActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mAdapter = new TweetsListAdapter(getApplicationContext(),mTweets);
-                        mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager  = new LinearLayoutManager(TweetsActivity.this);
-                        mRecyclerView.setLayoutManager(layoutManager);
-                        mRecyclerView.setHasFixedSize(true);
+                        if (mTweets.isEmpty()) {
+                            Toast.makeText(TweetsActivity.this, "Check your internet connection", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            mAdapter = new TweetsListAdapter(getApplicationContext(), mTweets);
+                            mRecyclerView.setAdapter(mAdapter);
+                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(TweetsActivity.this);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            mRecyclerView.setHasFixedSize(true);
 //                        Drawable dividerDrawable = ContextCompat.getDrawable(TweetsActivity.this,R.drawable.line_bottom);
 //                       mRecyclerView.addItemDecoration(new VerticalSpacingDecoration(dividerDrawable));
+                        }
                     }
                 });
 
             }
-            });
-
-            }
+        });
 
     }
+
+}
 
 
