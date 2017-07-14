@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chris.tatusafety.UI.HelpActivity"
+    android:background="@drawable/blue">
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome this is a guide to the application"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The first page displays reports sent by other users"
+       android:layout_marginTop="100dp"
+        android:drawableLeft="@drawable/ic_action_twitter"
+        android:drawablePadding="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main"
+        android:text="Try it out"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="On the side menu , Stages enables you to search for stages "
+        android:layout_marginTop="170dp"
+        android:drawableLeft="@drawable/ic_directions"
+        android:drawablePadding="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stages"
+        android:text="Try it out"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find me enables you to locate yourself on a map and find the nearest stage"
+        android:layout_marginTop="240dp"
+        android:drawableLeft="@drawable/ic_my_location"
+        android:drawablePadding="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/find"
+        android:text="try it out"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report enables one to report any malpractice that occurs in a PSV"
+        android:layout_marginTop="320dp"
+        android:drawableLeft="@drawable/ic_action_warning"
+        android:drawablePadding="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/report"
+        android:text="try it out"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Traffic Updates"
+        android:layout_marginTop="440dp"
+        android:drawableLeft="@drawable/ic_action_twitter"
+        android:drawablePadding="10dp"/>
+
+</RelativeLayout>

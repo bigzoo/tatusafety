@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.chris.tatusafety.Modules.Tweet;
 import com.chris.tatusafety.R;
+import com.chris.tatusafety.adapters.TweetsListAdapter;
 import com.chris.tatusafety.services.TwitterService;
 
 import java.io.IOException;
