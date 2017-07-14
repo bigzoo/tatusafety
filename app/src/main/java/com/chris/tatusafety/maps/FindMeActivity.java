@@ -21,78 +21,78 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class FindMeActivity extends FragmentActivity implements OnMapReadyCallback {
-    TextView tvLatitude, tvLongitude, tvSpeed, tvAltitude;
-    LocationManager locManager;
-    private GoogleMap mMap;
-    double latitude,longitude;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_find_me);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        tvLatitude = (TextView) findViewById(R.id.tvLatitude);
-        tvLongitude = (TextView) findViewById(R.id.tvLongitude);
-        tvSpeed = (TextView) findViewById(R.id.tvSpeed);
-        tvAltitude = (TextView) findViewById(R.id.tvAltitude);
-        locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
-
-            @Override
-            public void onLocationChanged(Location location){
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
-                tvLongitude.setText(""+String.format("%.2f", location.getLongitude()));
-                tvAltitude.setText(""+String.format("%.2f", location.getAltitude()));
-                tvLatitude.setText(""+String.format("%.2f", location.getLatitude()));
-                float speed = location.getSpeed();
-                speed = speed *18/5;
-                tvSpeed.setText(""+String.format("%.2f", speed));
-                Log.d("LOGLong",String.valueOf(longitude));
-                onMapReady(mMap);
-            }
-
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-                Toast.makeText(FindMeActivity.this, "GPS Updating", Toast.LENGTH_SHORT).show();
-                onMapReady(mMap);
-
-            }
-
-            @Override
-            public void onProviderEnabled(String provider) {
-                Toast.makeText(FindMeActivity.this, "GPS Enabled", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onProviderDisabled(String provider) {
-                Toast.makeText(FindMeActivity.this, "GPS Disabled", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-    }
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.clear();
-        // Add a marker in current gps co-odinates and move the camera to that position
-        LatLng locationRecieved = new LatLng(latitude,longitude);
-        mMap.addMarker(new MarkerOptions().position(locationRecieved).title("You Are Here"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(locationRecieved));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
-    }
-
+public class FindMeActivity extends FragmentActivity implements LocationListener {
+//    TextView tvLatitude, tvLongitude, tvSpeed, tvAltitude;
+//    LocationManager locManager;
+//    private GoogleMap mMap;
+//    double latitude,longitude;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_find_me);
+//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+//        mapFragment.getMapAsync(this);
+//        tvLatitude = (TextView) findViewById(R.id.tvLatitude);
+//        tvLongitude = (TextView) findViewById(R.id.tvLongitude);
+//        tvSpeed = (TextView) findViewById(R.id.tvSpeed);
+//        tvAltitude = (TextView) findViewById(R.id.tvAltitude);
+//        locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//            return;
+//        }
+//        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
+//
+//            @Override
+//            public void onLocationChanged(Location location){
+//                latitude = location.getLatitude();
+//                longitude = location.getLongitude();
+//                tvLongitude.setText(""+String.format("%.2f", location.getLongitude()));
+//                tvAltitude.setText(""+String.format("%.2f", location.getAltitude()));
+//                tvLatitude.setText(""+String.format("%.2f", location.getLatitude()));
+//                float speed = location.getSpeed();
+//                speed = speed *18/5;
+//                tvSpeed.setText(""+String.format("%.2f", speed));
+//                Log.d("LOGLong",String.valueOf(longitude));
+//                onMapReady(mMap);
+//            }
+//
+//            @Override
+//            public void onStatusChanged(String provider, int status, Bundle extras) {
+//                Toast.makeText(FindMeActivity.this, "GPS Updating", Toast.LENGTH_SHORT).show();
+//                onMapReady(mMap);
+//
+//            }
+//
+//            @Override
+//            public void onProviderEnabled(String provider) {
+//                Toast.makeText(FindMeActivity.this, "GPS Enabled", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onProviderDisabled(String provider) {
+//                Toast.makeText(FindMeActivity.this, "GPS Disabled", Toast.LENGTH_SHORT).show();
+//            }
+//
+//        });
+//    }
+//    @Override
+//    public void onMapReady(GoogleMap googleMap) {
+//        mMap = googleMap;
+//        mMap.clear();
+//        // Add a marker in current gps co-odinates and move the camera to that position
+//        LatLng locationRecieved = new LatLng(latitude,longitude);
+//        mMap.addMarker(new MarkerOptions().position(locationRecieved).title("You Are Here"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(locationRecieved));
+//        mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
+//    }
+//
 
 }
