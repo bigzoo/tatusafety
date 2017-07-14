@@ -6,6 +6,7 @@ package com.chris.tatusafety.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,9 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
     public TweetsListAdapter.TweetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tweet_list_item,parent,false);
         TweetViewHolder viewHolder = new TweetViewHolder(view);
+        Typeface man = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/Lato-Regular.ttf");
+        viewHolder.mTweetTextView.setTypeface(man);
+        viewHolder.mUserTextView.setTypeface(man);
         return viewHolder;
     }
 
@@ -66,6 +70,7 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             ButterKnife.bind(this,itemView);
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
+
         }
         private void bindTweet(Tweet tweet) {
             mUserTextView.setText("@"+ tweet.getUser()+" says");

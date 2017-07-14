@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //check for an access token
         AccessToken accessToken = AccountKit.getCurrentAccessToken();
-        Typeface man = Typeface.createFromAsset(getAssets(),"fonts/am.ttf");
+
 
         if (accessToken != null)
         {

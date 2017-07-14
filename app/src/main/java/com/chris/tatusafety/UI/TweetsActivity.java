@@ -1,5 +1,6 @@
 package com.chris.tatusafety.UI;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,6 +42,7 @@ public class TweetsActivity extends AppCompatActivity {
         String traffic = "Ma3Route";
         getTweets(traffic);
         Toast.makeText(TweetsActivity.this, "Fetching your traffic updates.Chill Kiasi...", Toast.LENGTH_SHORT).show();
+
 
 
 //        ActionBar ab = getSupportActionBar();
