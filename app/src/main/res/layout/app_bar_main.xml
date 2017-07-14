@@ -30,6 +30,8 @@
         android:layout_margin="@dimen/fab_margin"
        app:rippleColor="@color/blue"
         android:background="@color/blue"
-        app:srcCompat="@drawable/com_accountkit_pencil" />
+        app:srcCompat="@drawable/com_accountkit_pencil"
+        app:backgroundTint="#fff"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

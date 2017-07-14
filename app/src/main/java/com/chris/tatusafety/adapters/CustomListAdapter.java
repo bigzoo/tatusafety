@@ -52,10 +52,10 @@ public class CustomListAdapter extends BaseAdapter {
         }
         //EDIT HERE
         Report report = data.get(position);
-        viewHolder.tvRoad.setText(report.getRoad());
-        viewHolder.tvSacco.setText(report.getSacco());
-        viewHolder.tvDate.setText(report.getDate());
-        viewHolder.tvTime.setText(report.getTime());
+        viewHolder.tvRoad.setText("Road: "+report.getRoad());
+        viewHolder.tvSacco.setText("Sacco: "+report.getSacco());
+        viewHolder.tvDate.setText("On: "+report.getDate());
+        viewHolder.tvTime.setText("At: "+report.getTime());
         return convertView;
     }
     static class ViewHolder {

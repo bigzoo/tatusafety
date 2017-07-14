@@ -35,6 +35,7 @@ public class NewReportActivity extends FragmentActivity{
     float speed;
     Calendar calendar;
     int year, month, day;
+    TimePickerFragment timePickerFragment;
     EditText road,sacco,plates,county,extras;
     Button btnSubmit;
 

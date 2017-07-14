@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/blue"
     android:orientation="horizontal"
-    android:padding="5dip" >
+    android:padding="5dip">
     <!-- ListRow Left side Thumbnail image -->
     <!-- Rightend Arrow -->
     <!-- City-->
