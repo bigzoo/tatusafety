@@ -31,7 +31,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-public class FindMeActivity extends FragmentActivity implements LocationListener {
+public class FindMeActivity extends FragmentActivity implements LocationListener, OnMapReadyCallback {
 
     GoogleMap googleMap;
     MarkerOptions markerOptions;
@@ -41,7 +41,7 @@ public class FindMeActivity extends FragmentActivity implements LocationListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_find_me);
 
         // Getting Google Play availability status
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
@@ -59,7 +59,7 @@ public class FindMeActivity extends FragmentActivity implements LocationListener
             SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 
             // Getting GoogleMap object from the fragment
-            googleMap = fm.getMap();
+            fm.getMapAsync(this);
 
             // Enabling MyLocation Layer of Google Map
             googleMap.setMyLocationEnabled(true);
@@ -97,7 +97,7 @@ public class FindMeActivity extends FragmentActivity implements LocationListener
                 getSupportFragmentManager().findFragmentById(R.id.map);
 
         // Getting a reference to the map
-        googleMap = supportMapFragment.getMap();
+        supportMapFragment.getMapAsync(this);
 
         // Setting a click event handler for the map
         googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -130,6 +130,18 @@ public class FindMeActivity extends FragmentActivity implements LocationListener
             }
         });
     }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+//DO WHATEVER YOU WANT WITH GOOGLEMAP
+        map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+//        map.setMyLocationEnabled(true);
+        map.setTrafficEnabled(true);
+        map.setIndoorEnabled(true);
+        map.setBuildingsEnabled(true);
+        map.getUiSettings().setZoomControlsEnabled(true);
+    }
+
 
     @Override
     public void onLocationChanged(Location location) {
@@ -220,7 +232,6 @@ public class FindMeActivity extends FragmentActivity implements LocationListener
             // Setting the title for the marker.
             // This will be displayed on taping the marker
             markerOptions.title(addressText);
-
             // Placing a marker on the touched position
             googleMap.addMarker(markerOptions).showInfoWindow();
 
