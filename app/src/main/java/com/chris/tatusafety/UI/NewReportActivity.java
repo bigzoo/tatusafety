@@ -7,6 +7,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -35,6 +36,7 @@ public class NewReportActivity extends FragmentActivity{
     float speed;
     Calendar calendar;
     int year, month, day;
+    TimePickerFragment timePickerFragment;
     EditText road,sacco,plates,county,extras;
     Button btnSubmit;
 
@@ -63,6 +65,15 @@ public class NewReportActivity extends FragmentActivity{
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month, day);
+        Typeface man = Typeface.createFromAsset(getAssets(),"fonts/Lato-Regular.ttf");
+        Typeface boy = Typeface.createFromAsset(getAssets(),"fonts/Fresca-Regular.ttf");
+        road.setTypeface(man);
+        sacco.setTypeface(man);
+        plates.setTypeface(man);
+        county.setTypeface(man);
+        extras.setTypeface(man);
+        tvTimeView.setTypeface(man);
+        btnSubmit.setTypeface(boy);
 
         tvLatitude = (TextView) findViewById(R.id.tvLatitudeAuto);
         tvLongitude = (TextView) findViewById(R.id.tvLongitudeAuto);
@@ -174,7 +185,9 @@ public class NewReportActivity extends FragmentActivity{
             this.startService(i);
 
             db.fetchUnsyncedRecords();
-            Toast.makeText(this, "Record Saved Succesfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(NewReportActivity.this,HistoryActivity.class);
+            Toast.makeText(this, "Record sent succesfully", Toast.LENGTH_SHORT).show();
+        startActivity(intent);
              Log.d("JSON_DATA", db.fetchUnsyncedRecords());
 
 

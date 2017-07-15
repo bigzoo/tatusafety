@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.chris.tatusafety.UI.SpecificTweetActivity"
-    android:background="@drawable/side_nav_bar">
+    android:background="@drawable/blue">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,10 +51,10 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:textAlignment="center"
-        android:paddingBottom="30dp"
+        android:paddingBottom="0dp"
         android:text="External link"
         android:background="@drawable/buttonshape"
-        android:textColor="#fff"
+        android:textColor="@color/blue"
         android:textSize="25sp"
         android:id="@+id/extLinkTextView"/>
 

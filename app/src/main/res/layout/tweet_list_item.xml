@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="0dp">
-
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
 
     <TextView
+        android:id="@+id/tweetUserTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
         android:text="Twitter User"
         android:textColor="#000"
-       android:textStyle="bold"
         android:textSize="20sp"
-        android:id="@+id/tweetUserTextView"
-        android:layout_marginBottom="10dp"/>
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
 
     <TextView
+        android:id="@+id/tweetTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tweet"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:textStyle="italic"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/tweetTextView"
+        android:layout_below="@+id/tweetUserTextView"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="3dp"
         android:padding="0dp"
-        android:layout_marginBottom="2dp"/>
+        android:text="Tweet"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
-</LinearLayout>
+    <View
+        android:id="@+id/seperator"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tweetTextView"
+        android:background="#9EA3B0" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
