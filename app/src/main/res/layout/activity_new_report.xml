@@ -44,7 +44,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
-                android:hint="Date" />
+                android:hint="Date"
+                android:gravity="center"
+                />
+
         </android.support.design.widget.TextInputLayout>
 
         <!-- Time Label -->
@@ -92,6 +95,7 @@
                 android:id="@+id/edtSacco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:hint="Enter Sacco Name e.g KBS"
                 android:gravity="center"
                 android:inputType="textCapWords" />
@@ -140,6 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+
                 android:hint="Description of the situation"
                 android:gravity="center"/>
         </android.support.design.widget.TextInputLayout>
