@@ -108,5 +108,21 @@
     <string name="lat_long_speed_description">Your Location (Longitude and Latitude) and Speed are obtained automatically by Tatu Safety using your phones GPS. Please ensure you have enabled GPS on your phone.</string>
     <string name="login_anonymously_label">LOGIN ANONYMOUSLY</string>
     <string name="title_activity_maps">Map</string>
+<string-array name="sacco">
+    <item>Select SACCO</item>
+    <item>Embassava</item>
+    <item>Umoinner</item>
+    <item>Double M</item>
+    <item>City Hopper</item>
+    <item>City Star</item>
+</string-array>
 
+    <string-array name="issue">
+        <item>Select ISSUE</item>
+        <item>Over Speeding</item>
+        <item>Reckless Driving</item>
+        <item>Harrasment</item>
+        <item>Hiked Fare</item>
+        <item>Forgot Change</item>
+    </string-array>
 </resources>
