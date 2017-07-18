@@ -370,10 +370,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if(addresses != null && addresses.size() > 0 ){
                 Address address = addresses.get(0);
 
-                addressText = String.format("%s, %s, %s",
+                addressText = String.format("%s, %s",
                         address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
-                        address.getLocality(),
-                        getClass().getName() + '@' + Integer.toHexString(hashCode()));
+                        address.getLocality());
             }
 
             return addressText;
