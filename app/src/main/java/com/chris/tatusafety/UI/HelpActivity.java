@@ -36,8 +36,8 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
         mMainActivity.setOnClickListener(this);
         mUpdates.setOnClickListener(this);
         mReportButton.setOnClickListener(this);
-        Toast.makeText(HelpActivity.this,"Here guide to using this application",Toast.LENGTH_SHORT).show();
-        Typeface man = Typeface.createFromAsset(getAssets(),"fonts/PT_Sans-Web-Regular.ttf.ttf");
+        Toast.makeText(HelpActivity.this,"Here's a guide to using this application",Toast.LENGTH_SHORT).show();
+        Typeface man = Typeface.createFromAsset(getAssets(),"fonts/PT_Sans-Web-Regular.ttf");
         mFindButton.setTypeface(man);
         mUpdates.setTypeface(man);
         mStagesButton.setTypeface(man);
