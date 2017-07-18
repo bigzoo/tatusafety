@@ -61,12 +61,8 @@
             tools:replace="android:theme" />
         <activity
             android:name=".UI.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+           android:theme="@style/AppTheme.NoActionBar">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity">
             <intent-filter>
@@ -109,12 +105,23 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".UI.StagesActivity" />
-        <activity android:name=".UI.StagesListActivity" />
+        <activity android:name=".UI.StagesActivity" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
+        <activity android:name=".UI.StagesListActivity" >
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
         <activity
             android:name=".maps.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" /></activity>
         <activity
             android:name=".UI.SpeedActivity"
             android:theme="@style/AppTheme" />
@@ -129,11 +136,17 @@
         <activity android:name=".UI.SpecificTweetActivity" />
         <activity
             android:name=".UI.HelpActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".SplashScreen">
+            android:theme="@style/AppTheme" >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
+
+        <activity android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
