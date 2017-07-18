@@ -322,7 +322,7 @@ public class FormActivity extends ActionBarActivity implements
 
             // Show a toast message if an address was found.
             if (resultCode == Constants.SUCCESS_RESULT) {
-                showToast("Adress found");
+                showToast("Address found");
             }
 
             // Reset. Enable the Fetch Address button and stop showing the progress bar.
