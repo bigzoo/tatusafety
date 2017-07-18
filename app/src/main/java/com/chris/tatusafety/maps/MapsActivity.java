@@ -48,6 +48,8 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static android.R.attr.direction;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener , View.OnClickListener, LocationListener {
 
     GoogleMap googleMap;
@@ -371,7 +373,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 addressText = String.format("%s, %s, %s",
                         address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
                         address.getLocality(),
-                        address.getCountryName());
+                        getClass().getName() + '@' + Integer.toHexString(hashCode()));
             }
 
             return addressText;
