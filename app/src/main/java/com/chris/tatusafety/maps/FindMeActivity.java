@@ -1,11 +1,16 @@
 package com.chris.tatusafety.maps;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -14,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.R;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,11 +28,15 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.util.List;
+
 public class FindMeActivity extends FragmentActivity implements OnMapReadyCallback {
+
     TextView tvLatitude, tvLongitude, tvSpeed, tvAltitude;
     LocationManager locManager;
     private GoogleMap mMap;
-    double latitude,longitude;
+    double latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +62,16 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
         locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
 
             @Override
-            public void onLocationChanged(Location location){
+            public void onLocationChanged(Location location) {
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
-                tvLongitude.setText(""+String.format("%.2f", location.getLongitude()));
-                tvAltitude.setText(""+String.format("%.2f", location.getAltitude()));
-                tvLatitude.setText(""+String.format("%.2f", location.getLatitude()));
+                tvLongitude.setText("" + String.format("%.2f", location.getLongitude()));
+                tvAltitude.setText("" + String.format("%.2f", location.getAltitude()));
+                tvLatitude.setText("" + String.format("%.2f", location.getLatitude()));
                 float speed = location.getSpeed();
-                speed = speed *18/5;
-                tvSpeed.setText(""+String.format("%.2f", speed));
-                Log.d("LOGLong",String.valueOf(longitude));
+                speed = speed * 18 / 5;
+                tvSpeed.setText("" + String.format("%.2f", speed));
+                Log.d("LOGLong", String.valueOf(longitude));
                 onMapReady(mMap);
             }
 
@@ -83,16 +94,17 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
 
         });
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.clear();
         // Add a marker in current gps co-odinates and move the camera to that position
-        LatLng locationRecieved = new LatLng(latitude,longitude);
+        LatLng locationRecieved = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(locationRecieved).title("You Are Here"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(locationRecieved));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
     }
-
-
 }
+
+

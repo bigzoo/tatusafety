@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.chris.tatusafety.MainActivity;
 import com.chris.tatusafety.R;
+import com.chris.tatusafety.maps.FindMeActivity;
 import com.chris.tatusafety.maps.MapsActivity;
 import com.facebook.accountkit.AccessToken;
 import com.facebook.accountkit.AccountKit;
@@ -97,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginSuccess() {
 
-        Intent mainActivity = new Intent(this,MainActivity.class);
+        Intent mainActivity = new Intent(this,MapsActivity.class);
         startActivity(mainActivity);
         finish();
     }

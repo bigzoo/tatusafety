@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.UI.AccountActivity;
+import com.chris.tatusafety.UI.FormActivity;
 import com.chris.tatusafety.UI.HelpActivity;
 import com.chris.tatusafety.UI.HistoryActivity;
 import com.chris.tatusafety.UI.NewReportActivity;
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
             // Handle the camera action
         } else if (id == R.id.nav_report) {
-            Intent newReport = new Intent(this, NewReportActivity.class);
+            Intent newReport = new Intent(this, FormActivity.class);
             startActivity(newReport);
 
         } else if (id == R.id.nav_findMe) {
