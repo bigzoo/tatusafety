@@ -28,7 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-       app:backgroundTint="#fff"
-        app:srcCompat="@drawable/com_accountkit_pencil" />
+       app:rippleColor="@color/blue"
+        android:background="@color/blue"
+        app:srcCompat="@drawable/com_accountkit_pencil"
+        app:backgroundTint="#fff"/>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -10,6 +10,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
+            <TextView
+                android:id="@+id/tweetUserText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="10dp"
+                android:text="Twitter User"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tweetUserTextView"
@@ -19,9 +30,10 @@
         android:layout_marginLeft="10dp"
         android:text="Twitter User"
         android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:textSize="14sp"
+        android:textStyle="italic"
+        android:layout_marginTop="50dp"
+        />
 
     <TextView
         android:id="@+id/tweetTextView"
@@ -30,18 +42,25 @@
         android:layout_below="@+id/tweetUserTextView"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="5dp"
         android:padding="0dp"
         android:text="Tweet"
         android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="italic" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date "
+                android:layout_below="@+id/tweetTextView"
+                android:id="@+id/date"
+                android:layout_marginLeft="240dp"/>
 
     <View
         android:id="@+id/seperator"
         android:layout_width="fill_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/tweetTextView"
+        android:layout_below="@+id/date"
         android:background="#9EA3B0" />
         </RelativeLayout>
     </ScrollView>
