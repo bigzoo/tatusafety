@@ -57,7 +57,7 @@
         android:layout_alignParentTop="true"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
-        android:text="Set Time"
+        android:text="SET TIME"
         android:layout_below="@+id/spinner2" />
 
 
@@ -76,7 +76,7 @@
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="Set Location"
+        android:text="SET LOCATION"
         android:onClick="fetchAddressButtonHandler" />
 
     <Button
