@@ -40,7 +40,7 @@
             tools:replace="android:theme" />
         <activity
             android:name=".UI.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+           android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity">
@@ -122,7 +122,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.chris.tatusafety.MainActivity" />
         </activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
