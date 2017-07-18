@@ -4,9 +4,11 @@
     <rotate
         android:duration="4000"
         android:fromDegrees="0"
-        android:toDegrees="720"
+        android:toDegrees="1020"
         android:pivotX="50%"
-        android:pivotY="50%">
+        android:pivotY="100%"
+        >
     </rotate>
+
 
 </set>

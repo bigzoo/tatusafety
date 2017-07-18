@@ -11,24 +11,25 @@ import android.widget.ImageView;
 import com.chris.tatusafety.UI.LoginActivity;
 
 public class SplashScreen extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 30000;
+    private static int SPLASH_TIME_OUT = 300;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        final ImageView imageView = (ImageView) findViewById(R.id.imgLogo);
+        final ImageView imageView = (ImageView) findViewById(R.id.busrot);
+        final ImageView leftBus = (ImageView) findViewById(R.id.busleft);
         final Animation animation_1 = AnimationUtils.loadAnimation(getBaseContext(),R.animator.antirotate);
         final Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(),R.animator.rotate);
         imageView.startAnimation(animation_2);
         animation_2.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
+                imageView.startAnimation(animation_1);
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                imageView.startAnimation(animation_1);
+                leftBus.startAnimation(animation_1);
             }
 
             @Override
@@ -36,10 +37,11 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         });
+
         animation_1.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
+                leftBus.startAnimation(animation_2);
             }
 
             @Override
@@ -54,14 +56,14 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         });
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        },SPLASH_TIME_OUT);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+        },SPLASH_TIME_OUT);
     }
 }

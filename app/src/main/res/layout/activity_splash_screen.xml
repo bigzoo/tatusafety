@@ -4,13 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chris.tatusafety.SplashScreen">
+    tools:context="com.chris.tatusafety.SplashScreen"
+    android:background="@drawable/blue">
+
     <ImageView
-        android:id="@+id/imgLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:src="@drawable/bg_wave" />
+        android:src="@drawable/bus"
+        android:id="@+id/busrot"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="200dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bus"
+        android:id="@+id/busleft"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="200dp"/>
 
     <TextView
         android:layout_width="fill_parent"

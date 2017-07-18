@@ -19,4 +19,7 @@
     <color name="ak_inputText">#7d97ad</color>
     <color name="ak_statusBar">#00c5a5</color>
     <color name="ak_icon">#09d4b6</color>
+    <color name="yellow">#DACC3E</color>
+    <color name="lightBlue">#D3F3EE</color>
+    <color name="moonstone">#7FB7BE</color>
 </resources>
