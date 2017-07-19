@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    android:background="@color/lightBlue"
     >
 
     <include
@@ -22,6 +23,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer"
+        app:itemBackground="@color/lightBlue"
+        android:backgroundTint="@color/lightBlue"/>
 
 </android.support.v4.widget.DrawerLayout>
