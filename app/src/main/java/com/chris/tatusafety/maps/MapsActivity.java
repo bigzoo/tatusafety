@@ -50,7 +50,7 @@ import butterknife.ButterKnife;
 
 import static android.R.attr.direction;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener , View.OnClickListener, LocationListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener , LocationListener {
 
     GoogleMap googleMap;
     MarkerOptions markerOptions;
@@ -63,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
-    @Bind(com.chris.tatusafety.R.id.mainback) Button mBack;
+//    @Bind(com.chris.tatusafety.R.id.mainback) Button mBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +83,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Showing status
         if (status != ConnectionResult.SUCCESS) { // Google Play Services are not available
 
-            int requestCode = 10;
+            int requestCode = 3000;
             Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
             dialog.show();
 
@@ -116,7 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sendRequest();
             }
         });
-        mBack.setOnClickListener(this);
+//        mBack.setOnClickListener(this);
 
     }
 
@@ -298,7 +298,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onLocationChanged(Location location) {
 
-        TextView tvLocation = (TextView) findViewById(R.id.tv_location);
+        EditText etOrigin = (EditText) findViewById(R.id.etOrigin);
 
         // Getting latitude of the current location
         double latitude = location.getLatitude();
@@ -316,7 +316,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        googleMap.animateCamera(CameraUpdateFactory.zoomTo(17));
 
         // Setting latitude and longitude in the TextView tv_location
-        tvLocation.setText("Latitude:" +  latitude  + ", Longitude:"+ longitude );
+//        etOrigin.setText("Latitude:" +  latitude  + ", Longitude:"+ longitude );
+
 
     }
 
@@ -345,6 +346,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private class ReverseGeocodingTask extends AsyncTask<LatLng, Void, String> {
         Context mContext;
+        EditText etOrigin = (EditText) findViewById(R.id.etOrigin);
 
         public ReverseGeocodingTask(Context context){
             super();
@@ -373,7 +375,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 addressText = String.format("%s, %s",
                         address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
                         address.getLocality());
+
             }
+
 
             return addressText;
         }
@@ -386,8 +390,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // Placing a marker on the touched position
             mMap.addMarker(markerOptions).showInfoWindow();
+            etOrigin.setText(addressText);
 
         }
+
+
     }
 
 //    @Override
@@ -398,11 +405,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //    }
 
 
-    @Override
-    public void onClick(View v) {
-        if (v == mBack) {
-            Intent intent = new Intent(MapsActivity.this,MainActivity.class);
-            startActivity(intent);
-        }
-    }
+//    @Override
+//    public void onClick(View v) {
+//        if (v == mBack) {
+//            Intent intent = new Intent(MapsActivity.this,MainActivity.class);
+//            startActivity(intent);
+//        }
+//    }
 }
