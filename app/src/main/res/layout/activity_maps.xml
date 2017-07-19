@@ -14,11 +14,12 @@
     android:layout_height="wrap_content"
     android:id="@+id/etOrigin" />
 
-<EditText
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:id="@+id/etDestination"
-android:hint="Where to?"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDestination"
+        android:hint="Where are you going"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"

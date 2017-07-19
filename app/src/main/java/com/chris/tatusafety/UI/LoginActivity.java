@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginSuccess() {
 
-        Intent mainActivity = new Intent(this,MapsActivity.class);
+        Intent mainActivity = new Intent(this,MainActivity.class);
         startActivity(mainActivity);
         finish();
     }
