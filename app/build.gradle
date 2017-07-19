@@ -26,15 +26,18 @@ android {
         it.buildConfigField 'String', 'TWITTER_TOKEN', TwitterToken
     }
     sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+    productFlavors {
+        free {
+            minSdkVersion 19
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.loopj.android:android-async-http:1.4.9'
