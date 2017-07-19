@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/lightBlue"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity$PlaceholderFragment">
@@ -17,7 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter #Plate"
-        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -28,37 +29,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText"
+        android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="45dp" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:layout_below="@+id/spinner1"
         android:layout_centerHorizontal="true"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="45dp" />
 
     <TextView
         android:id="@+id/dateTimeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner2"
+        android:textSize="20dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-       android:layout_marginTop="10dp" />
+       android:layout_marginTop="45dp"
+        android:textColor="@color/black"/>
     <Button
         android:id="@+id/dateTimeBtn"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_alignParentTop="true"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:text="SET TIME"
-        android:layout_below="@+id/spinner2" />
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/spinner2"
+        android:background="@color/yellow"/>
 
 
     <TextView
@@ -66,17 +73,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dateTimeView"
+        android:textSize="20dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="45dp"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/fetch_address_button"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:background="@color/yellow"
         android:text="SET LOCATION"
+        android:layout_marginRight="10dp"
         android:onClick="fetchAddressButtonHandler" />
 
     <Button
@@ -85,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:background="@color/yellow"
         android:text="SUBMIT"/>
 
 </RelativeLayout>

@@ -23,13 +23,14 @@
         <!--android:layout_marginTop="200dp"/>-->
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:textColor="@color/lightBlue"
+        android:textSize="40dp"
+        android:textColor="@color/black"
         android:gravity="center_horizontal"
-        android:text="Easing the use of public transport, one PSV at a time "
+        android:text="TATU SAFETY"
         android:layout_marginTop="60dp"
+        android:background="@drawable/buttonshape"
         android:padding="5dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

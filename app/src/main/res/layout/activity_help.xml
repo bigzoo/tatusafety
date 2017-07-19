@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.chris.tatusafety.UI.HelpActivity"
     android:background="@drawable/blue"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
     android:id="@+id/mainView">
     <ScrollView
         android:layout_width="match_parent"
@@ -22,16 +24,18 @@
         android:layout_height="wrap_content"
         android:text="The first page displays reports sent by other users"
        android:layout_marginTop="10dp"
-
-        android:drawablePadding="15dp"
-        android:textSize="15sp"
+        android:layout_marginLeft="25dp"
+        android:drawablePadding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         android:id="@+id/first"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/main"
-        android:text="Try it out"
+        android:background="@color/lightBlue"
+        android:text="TRY IT OUT"
        android:layout_below="@id/first"
         android:layout_marginLeft="100dp"
         />
@@ -40,44 +44,56 @@
         android:layout_height="wrap_content"
         android:text="On the side menu , Stages enables you to search for stages "
         android:layout_below="@id/main"
+        android:textColor="@color/black"
         android:drawableLeft="@drawable/ic_directions"
         android:drawablePadding="10dp"
+        android:layout_marginTop="14dp"
+        android:textSize="18sp"
         android:id="@+id/stager"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/stages"
-        android:text="Try it out"
+        android:text="TRY IT OUT"
+        android:background="@color/lightBlue"
         android:layout_below="@id/stager"
         android:layout_marginLeft="100dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:text="Find me enables you to locate yourself on a map and find the nearest stage"
         android:drawableLeft="@drawable/ic_my_location"
         android:layout_below="@id/stages"
         android:id="@+id/below_stages"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="14dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/find"
-        android:text="try it out"
+        android:text="TRY IT OUT"
+        android:background="@color/lightBlue"
         android:layout_below="@id/below_stages"
         android:layout_marginLeft="100dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/find"
+        android:textColor="@color/black"
         android:id="@+id/telling"
         android:text="Report enables one to report any malpractice that occurs in a PSV"
         android:drawableLeft="@drawable/ic_action_warning"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="14dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/lightBlue"
         android:id="@+id/report"
-        android:text="try it out"
+        android:text="TRY IT OUT"
         android:layout_below="@+id/telling"
         android:layout_marginLeft="100dp"/>
     <TextView
@@ -86,13 +102,17 @@
         android:text="Traffic Updates provides you with the latest crowd sourced traffic updates "
         android:drawableLeft="@drawable/ic_action_twitter"
         android:layout_below="@id/report"
+        android:textColor="@color/black"
         android:id="@+id/below_report"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="14dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/twitterUpdates"
-        android:text="try it out"
+        android:text="TRY IT OUT"
+        android:background="@color/lightBlue"
         android:layout_below="@+id/below_report"
         android:layout_marginLeft="100dp"/>
         </LinearLayout>
