@@ -36,8 +36,8 @@ public class SplashScreen extends AppCompatActivity {
             mText.setTypeface(man);
         final ImageView imageView = (ImageView) findViewById(R.id.busrot);
 //        final ImageView leftBus = (ImageView) findViewById(R.id.busleft);
-        final Animation animation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.animator.antirotate);
-        final Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(), R.animator.rotate);
+        final Animation animation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.antirotate);
+        final Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 
 
         int x=imageView.getRight()-imageView.getLeft();

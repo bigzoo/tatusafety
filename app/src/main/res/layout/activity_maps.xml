@@ -13,7 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/etOrigin"
-    android:nextFocusDown="@id/etDestination"
+
     />
 
     <EditText
@@ -22,7 +22,7 @@
         android:id="@+id/etDestination"
         android:hint="Where are you going"
         android:inputType="textAutoComplete"
-        android:nextFocusDown="@id/btnFindPath"/>
+       />
 
 
     <LinearLayout

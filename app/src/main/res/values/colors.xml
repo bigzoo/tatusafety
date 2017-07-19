@@ -3,7 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="accountBackground">#61727f</color>
     <color name="accountLabel">#7d97ad</color>
     <color name="accountText">#61727f</color>
