@@ -1,6 +1,7 @@
 package com.chris.tatusafety;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,13 +11,18 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chris.tatusafety.UI.LoginActivity;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 import static com.chris.tatusafety.R.id.imageView;
 
 public class SplashScreen extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;
+    @Bind(R.id.textView7) TextView mText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +31,15 @@ public class SplashScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+        ButterKnife.bind(this);
+        Typeface man = Typeface.createFromAsset(getAssets(),"fonts/Lato-Regular.ttf");
+            mText.setTypeface(man);
         final ImageView imageView = (ImageView) findViewById(R.id.busrot);
 //        final ImageView leftBus = (ImageView) findViewById(R.id.busleft);
         final Animation animation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.animator.antirotate);
         final Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(), R.animator.rotate);
 
-        //This makes the brick move
+
         int x=imageView.getRight()-imageView.getLeft();
         int y=imageView.getBottom()-imageView.getTop();
         final TranslateAnimation translate = new TranslateAnimation(

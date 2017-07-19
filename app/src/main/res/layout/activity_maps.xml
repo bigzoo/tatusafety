@@ -12,7 +12,8 @@
 <android.support.design.widget.TextInputEditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/etOrigin" />
+    android:id="@+id/etOrigin"
+    />
 
     <EditText
         android:layout_width="match_parent"
@@ -29,41 +30,26 @@
             android:id="@+id/btnFindPath"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SHOW ON MAP" />
 
-
-
-        <!--<ImageView-->
-            <!--android:layout_width="40dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:layout_marginTop="5dp" />-->
-
+            android:text="Find the way"
+            android:padding="5dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/yellow"
+            />
         <TextView
             android:id="@+id/tvDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:layout_marginLeft="15dp"
             android:text="0 km" />
-
-        <!--<ImageView-->
-            <!--android:layout_width="40dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:padding="5dp" />-->
-
         <TextView
             android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0 min"
-            android:layout_marginLeft="70dp"/>
-        <!--<Button-->
-            <!--android:id="@+id/mainback"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="0dp"-->
-            <!--android:text="BACK TO MAIN"-->
-            <!--android:layout_marginLeft="0dp"/>-->
+
+            android:layout_marginLeft="40dp"
+            android:text="0 min" />
 
     </LinearLayout>
 
