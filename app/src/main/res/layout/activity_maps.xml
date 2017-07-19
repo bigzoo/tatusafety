@@ -16,11 +16,11 @@
     android:hint="Where are you "
     android:textStyle="italic"/>
 
-<EditText
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:id="@+id/etDestination"
-android:hint="Where are you going"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDestination"
+        android:hint="Where are you going"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -32,12 +32,6 @@ android:hint="Where are you going"/>
             android:layout_height="wrap_content"
             android:text="Find the way" />
 
-        <Button
-            android:id="@+id/mainback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:text=" main" />
 
         <ImageView
             android:layout_width="40dp"
