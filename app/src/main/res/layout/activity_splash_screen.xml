@@ -10,17 +10,21 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bus"
+        android:src="@drawable/tatu_logo_01"
         android:id="@+id/busrot"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_below="@+id/textView7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <!--<ImageView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
-        <!--android:src="@drawable/bus"-->
+        <!--android:src="@drawable/tatu_logo_02"-->
         <!--android:id="@+id/busleft"-->
-        <!--android:layout_marginLeft="140dp"-->
-        <!--android:layout_marginTop="200dp"/>-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
     <TextView
         android:layout_width="400dp"
@@ -28,13 +32,18 @@
         android:textSize="40dp"
         android:textColor="@color/black"
         android:gravity="center_horizontal"
+<<<<<<< HEAD
         android:text="TATU SAFETY"
         android:layout_marginTop="60dp"
         android:background="@drawable/buttonshape"
+=======
+        android:text="Easing the use of public transport, one PSV at a time "
+        android:layout_marginTop="42dp"
+>>>>>>> 3343981f61ad8e20dc649040948a5c516277a562
         android:padding="5dp"
+        android:id="@+id/textView7"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView7" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
