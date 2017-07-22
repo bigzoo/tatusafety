@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
     <color name="colorPrimary">#dacc3e</color>
     <color name="colorPrimaryDark">#dacc3e</color>
     <color name="colorAccent">#dacc3e</color>
-
-=======
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
->>>>>>> 3343981f61ad8e20dc649040948a5c516277a562
     <color name="accountBackground">#61727f</color>
     <color name="accountLabel">#7d97ad</color>
     <color name="accountText">#61727f</color>
