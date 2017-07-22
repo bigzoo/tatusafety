@@ -29,7 +29,7 @@ android {
     productFlavors {
         free {
 
-            minSdkVersion 17
+            minSdkVersion 19
             targetSdkVersion 17
 
         }
