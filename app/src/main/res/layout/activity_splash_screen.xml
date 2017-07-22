@@ -10,14 +10,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/tatu_logo_01"
+        android:src="@drawable/tatu_logo"
         android:id="@+id/busrot"
-        android:layout_marginTop="56dp"
         android:layout_marginLeft="72dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="70dp"
         android:layout_below="@+id/textView7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="105dp" />
     <!--<ImageView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -37,7 +36,4 @@
         android:padding="5dp"
         android:id="@+id/textView7"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-</RelativeLayout>
+        android:layout_alignPa

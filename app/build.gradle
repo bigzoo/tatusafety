@@ -28,8 +28,10 @@ android {
     sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
     productFlavors {
         free {
+
             minSdkVersion 17
             targetSdkVersion 17
+
         }
     }
 }
