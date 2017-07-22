@@ -29,8 +29,8 @@ android {
     productFlavors {
         free {
 
-            minSdkVersion 19
-            targetSdkVersion 17
+            targetSdkVersion 25
+            minSdkVersion 15
 
         }
     }

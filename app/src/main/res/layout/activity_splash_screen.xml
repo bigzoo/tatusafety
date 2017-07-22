@@ -35,6 +35,5 @@
         android:layout_marginTop="42dp"
         android:padding="5dp"
         android:id="@+id/textView7"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true" />
     </RelativeLayout>

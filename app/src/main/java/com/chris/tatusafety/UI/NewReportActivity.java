@@ -170,25 +170,25 @@ public class NewReportActivity extends FragmentActivity{
 //            Toast.makeText(this, "You cannot submit report with a speed value less than 60!", Toast.LENGTH_SHORT).show();
 //        }
 //        else {
-            Report report = new Report(null,Latitude,Longitude,Date,Time,Road,Sacco,Speed,Plates,County,Extras,Status,Uuid);
-            Database db = new Database(this);
-            db.insertReport(report);
-            //Toast.makeText(this, "Total Submitted is "+db.countRecords(), Toast.LENGTH_SHORT).show();
-            tvDateView.setText("");
-            tvTimeView.setText("");
-            road.setText("");
-            sacco.setText("");
-            plates.setText("");
-            county.setText("");
-            extras.setText("");
-            Intent i=new Intent(this,SyncService.class);
-            this.startService(i);
+        Report report = new Report(null,Latitude,Longitude,Date,Time,Road,Sacco,Speed,Plates,County,Extras,Status,Uuid);
+        Database db = new Database(this);
+        db.insertReport(report);
+        //Toast.makeText(this, "Total Submitted is "+db.countRecords(), Toast.LENGTH_SHORT).show();
+        tvDateView.setText("");
+        tvTimeView.setText("");
+        road.setText("");
+        sacco.setText("");
+        plates.setText("");
+        county.setText("");
+        extras.setText("");
+        Intent i=new Intent(this,SyncService.class);
+        this.startService(i);
 
-            db.fetchUnsyncedRecords();
+        db.fetchUnsyncedRecords();
         Intent intent = new Intent(NewReportActivity.this,HistoryActivity.class);
-            Toast.makeText(this, "Record sent succesfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Record sent succesfully", Toast.LENGTH_SHORT).show();
         startActivity(intent);
-             Log.d("JSON_DATA", db.fetchUnsyncedRecords());
+        Log.d("JSON_DATA", db.fetchUnsyncedRecords());
 
 
 
