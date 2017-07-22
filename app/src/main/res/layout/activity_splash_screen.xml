@@ -35,5 +35,10 @@
         android:layout_marginTop="42dp"
         android:padding="5dp"
         android:id="@+id/textView7"
+<<<<<<< HEAD
         android:layout_alignParentTop="true" />
+=======
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="false"/>
+>>>>>>> 56c95e385670afae18dfacccabae68b5a1f07e61
     </RelativeLayout>
