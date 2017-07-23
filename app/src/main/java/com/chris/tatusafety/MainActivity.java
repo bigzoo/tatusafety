@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if (id == R.id.nav_explore) {
-            Intent main = new Intent(this, StagesActivity.class);
+            Intent main = new Intent(this, MapsActivity.class);
             startActivity(main);
             finish();
             // Handle the camera action
