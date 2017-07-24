@@ -35,7 +35,6 @@ public class SplashScreen extends AppCompatActivity {
         Typeface man = Typeface.createFromAsset(getAssets(),"fonts/Lato-Regular.ttf");
             mText.setTypeface(man);
         final ImageView imageView = (ImageView) findViewById(R.id.busrot);
-//        final ImageView leftBus = (ImageView) findViewById(R.id.busleft);
         final Animation animation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.antirotate);
         final Animation animation_2 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 

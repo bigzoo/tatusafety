@@ -27,7 +27,7 @@
         android:id="@+id/tweetsRecyclerView"
         android:padding="0dp"
        android:layout_below="@+id/traffic"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="0dp"/>
 
 
 </RelativeLayout>
