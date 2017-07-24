@@ -41,7 +41,7 @@ public class TweetsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         String traffic = "Ma3Route";
         getTweets(traffic);
-        Toast.makeText(TweetsActivity.this, "Fetching your traffic updates.Chill Kiasi...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TweetsActivity.this, "Disclaimer!! We(Tatu Safety) do not own or produce , neither are we directly associated with the User / Tweeter any of the tweets displayed here.", Toast.LENGTH_LONG).show();
 
 
 
