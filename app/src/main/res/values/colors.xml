@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#dacc3e</color>
+    <color name="colorPrimaryDark">#dacc3e</color>
+    <color name="colorAccent">#dacc3e</color>
     <color name="accountBackground">#61727f</color>
     <color name="accountLabel">#7d97ad</color>
     <color name="accountText">#61727f</color>
@@ -11,13 +11,13 @@
     <color name="black">#000000</color>
     <color name="ak_background">#d5f0ec</color>
     <color name="ak_text">#61727f</color>
-    <color name="ak_buttonBackground">#09d4b6</color>
-    <color name="ak_buttonPressedBackground">#00c5a5</color>
+    <color name="ak_buttonBackground">#dacc3e</color>
+    <color name="ak_buttonPressedBackground">#dacc3e</color>
     <color name="ak_buttonText">#ffffff</color>
     <color name="ak_inputBackground">#ffffff</color>
-    <color name="ak_inputText">#7d97ad</color>
-    <color name="ak_statusBar">#00c5a5</color>
-    <color name="ak_icon">#09d4b6</color>
+    <color name="ak_inputText">#dacc3e</color>
+    <color name="ak_statusBar">#dacc3e</color>
+    <color name="ak_icon">#dacc3e</color>
     <color name="yellow">#dacc3e</color>
     <color name="lightBlue">#D3F3EE</color>
     <color name="moonstone">#7FB7BE</color>
