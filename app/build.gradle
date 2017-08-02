@@ -63,7 +63,7 @@ dependencies {
     compile 'org.parceler:parceler-api:1.1.6'
     compile 'se.akerfeldt:okhttp-signpost:1.1.0'
     compile 'oauth.signpost:signpost-core:1.2.1.2'
-    testCompile 'junit:junit:4.12'
     compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
