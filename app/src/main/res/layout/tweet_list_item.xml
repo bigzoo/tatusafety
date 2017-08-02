@@ -26,8 +26,8 @@
                android:layout_width="wrap_content"
                android:layout_height="match_parent"
                android:src="@drawable/ic_action_twitter"
-               android:layout_marginLeft="320dp"
-               android:layout_marginTop="10dp"/>
+               android:layout_marginLeft="250dp"
+               android:layout_marginTop="11dp"/>
 
     <TextView
         android:id="@+id/tweetUserTextView"
