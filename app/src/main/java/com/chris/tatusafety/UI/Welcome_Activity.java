@@ -25,12 +25,13 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class Welcome_Activity extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.btn_next)Button mNext;
-    @Bind(R.id.btn_skip) Button mSkip;
-    @Bind(R.id.view_pager) ViewPager mViewPager;
+//    @Bind(R.id.btn_next)Button btnNext;
+//    @Bind(R.id.btn_skip) Button btnSkip;
+    private Button btnSkip, btnNext;
+//    @Bind(R.id.view_pager) ViewPager mViewPager;
     @Bind(R.id.layoutDots)
     TextView[] mDots;
-
+    private ViewPager mViewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
     private int[] layouts;
@@ -52,8 +53,11 @@ public class Welcome_Activity extends AppCompatActivity implements View.OnClickL
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
         setContentView(R.layout.activity_welcome);
-        mNext.setOnClickListener(this);
-        mSkip.setOnClickListener(this);
+        mViewPager = (ViewPager) findView
+        btnSkip = (Button) findViewById(R.id.btn_skip);
+        btnNext = (Button) findViewById(R.id.btn_next);
+        btnSkip.setOnClickListener(this);
+        btnSkip.setOnClickListener(this);
         layouts = new int[]{
                 R.layout.welcome_slider_1,
                 R.layout.welcome_slider_2,
@@ -79,9 +83,9 @@ public class Welcome_Activity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        if (v == mSkip) {
+        if (v == btnSkip) {
             launchHomeScreen();
-        } else if (v == mNext) {
+        } else if (v == btnNext) {
             // checking for last page
             // if last page home screen will be launched
             int current = getItem(+1);
@@ -130,12 +134,12 @@ public class Welcome_Activity extends AppCompatActivity implements View.OnClickL
             addBottomDots(position);
             if(position == layouts.length -1) {
                 //last page make button text NEXT to GOT IT
-                mNext.setText(getString(R.string.start));
-                mSkip.setVisibility(View.GONE);
+                btnNext.setText(getString(R.string.start));
+                btnSkip.setVisibility(View.GONE);
             } else {
                 // still pages are left
-                mNext.setText(getString(R.string.next));
-                mSkip.setVisibility(View.VISIBLE);
+                btnNext.setText(getString(R.string.next));
+                btnSkip.setVisibility(View.VISIBLE);
             }
 
         }

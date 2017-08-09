@@ -8,11 +8,6 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
-
-    <permission
-        android:name="com.chris.tatusafety.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
-
     <uses-permission android:name="com.chris.tatusafety.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,6 +20,11 @@
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+
+    <permission
+        android:name="com.chris.tatusafety.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
 
     <uses-feature
         android:glEsVersion="0x00020000"
