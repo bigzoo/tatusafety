@@ -44,7 +44,7 @@ public class TweetsActivity extends AppCompatActivity {
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefresher);
         final String traffic = "Ma3Route";
         getTweets(traffic);
-        Toast.makeText(TweetsActivity.this, "Disclaimer!! We(Tatu Safety) do not own or produce , neither are we directly associated with the User / Tweeter any of the tweets displayed here.", Toast.LENGTH_LONG).show();
+        Toast.makeText(TweetsActivity.this, "Fetching traffic updates ... ", Toast.LENGTH_LONG).show();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
