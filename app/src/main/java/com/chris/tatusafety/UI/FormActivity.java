@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chris.tatusafety.MainActivity;
 import com.chris.tatusafety.Modules.Constants;
 import com.chris.tatusafety.R;
 import com.chris.tatusafety.services.FetchAddressIntentService;
@@ -30,6 +31,7 @@ import com.google.android.gms.location.LocationServices;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import static com.chris.tatusafety.R.id.submit;
 import static com.google.android.gms.location.LocationServices.FusedLocationApi;
 
 public class FormActivity extends ActionBarActivity implements
@@ -88,6 +90,7 @@ public class FormActivity extends ActionBarActivity implements
      */
     Button mFetchAddressButton;
     Button dateTimeBtn;
+    Button submit;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +112,7 @@ public class FormActivity extends ActionBarActivity implements
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mFetchAddressButton = (Button) findViewById(R.id.fetch_address_button);
         dateTimeBtn = (Button) findViewById(R.id.dateTimeBtn);
+        submit = (Button) findViewById(R.id.submit);
         dateTimeView = (TextView) findViewById(R.id.dateTimeView);
         calendar = Calendar.getInstance();
         simpleDateFormat = new SimpleDateFormat("HH:mm dd-MM-yyyy");
@@ -131,6 +135,16 @@ public class FormActivity extends ActionBarActivity implements
             }
 
         });
+        submit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
+
+        });
+
 
     }
 

@@ -18,16 +18,21 @@
         android:textAlignment="center"
         android:text="Traffic Updates"
         android:id="@+id/traffic"/>
-   
 
 
-    <android.support.v7.widget.RecyclerView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tweetsRecyclerView"
-        android:padding="0dp"
-       android:layout_below="@+id/traffic"
-        android:layout_marginTop="0dp"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/traffic">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/tweetsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/traffic"
+            android:padding="0dp" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
 </RelativeLayout>

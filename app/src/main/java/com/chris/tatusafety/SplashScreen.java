@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chris.tatusafety.UI.LoginActivity;
+import com.chris.tatusafety.UI.Welcome_Activity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -97,7 +98,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 finish();
-                Intent i = new Intent(getBaseContext(), LoginActivity.class);
+                Intent i = new Intent(getBaseContext(), Welcome_Activity.class);
                 startActivity(i);
             }
 
