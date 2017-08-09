@@ -7,11 +7,16 @@ package com.chris.tatusafety.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chris.tatusafety.Modules.Tweet;
 import com.chris.tatusafety.R;
@@ -34,6 +39,7 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
 
     private ArrayList<Tweet> mTweets = new ArrayList<>();
     private Context mContext;
+    private Tweet mTweet;
 
     public TweetsListAdapter(Context context,ArrayList<Tweet> tweets){
         mContext = context;
@@ -65,6 +71,7 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
         @Bind(R.id.tweetUserTextView) TextView mUserTextView;
         @Bind(R.id.tweetUserText) TextView mTweetUser;
 
+
         private Context mContext;
 
         public TweetViewHolder(View itemView){
@@ -73,22 +80,31 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
 
+
+
         }
         private void bindTweet(Tweet tweet) {
             mTweetUser.setText(tweet.getUser());
             mUserTextView.setText("@"+ tweet.getUser());
             mTweetTextView.setText(tweet.getTweetText());
-
         }
 
         @Override
         public void onClick(View v) {
-            int itemPosition = getLayoutPosition();
-            Intent intent = new Intent(mContext,SpecificTweetActivity.class);
-            Tweet clickedTweet = mTweets.get(itemPosition);
-            intent.putExtra("tweet", Parcels.wrap(clickedTweet));
-            mContext.startActivity(intent);
+//            if (v == mLink) {
+//                if (mTweet.getExternalLink().equals("No external links")) {
+//                    Toast.makeText(v.getContext(), "No external link available", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mTweet.getExternalLink()));
+//                    mContext.startActivity(webIntent);
+//                }
+//            }
 
+                int itemPosition = getLayoutPosition();
+                Intent intent = new Intent(mContext, SpecificTweetActivity.class);
+                Tweet clickedTweet = mTweets.get(itemPosition);
+                intent.putExtra("tweet", Parcels.wrap(clickedTweet));
+                mContext.startActivity(intent);
         }
     }
 }

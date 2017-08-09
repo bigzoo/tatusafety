@@ -28,6 +28,7 @@ import com.chris.tatusafety.UI.SettingsActivity;
 import com.chris.tatusafety.UI.SpecificTweetActivity;
 import com.chris.tatusafety.UI.StagesActivity;
 import com.chris.tatusafety.UI.TweetsActivity;
+import com.chris.tatusafety.UI.Welcome_Activity;
 import com.chris.tatusafety.adapters.CustomListAdapter;
 import com.chris.tatusafety.maps.FindMeActivity;
 import com.chris.tatusafety.maps.MapsActivity;

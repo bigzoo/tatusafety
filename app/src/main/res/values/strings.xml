@@ -128,16 +128,16 @@
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
-    <string name="start">GOT IT</string>
+    <string name="start">I AGREE</string>
 
-    <string name="slide_1_title">Hello There!</string>
+    <string name="slide_1_title">Hello There :)</string>
     <string name="slide_1_desc">Welcome to Tatu Safety.Swipe Left to continue</string>
 
     <string name="slide_2_title">Reports</string>
     <string name="slide_2_desc">With Tatu Safety you can report any malpractice that occurs in a PSV while you travel!</string>
 
     <string name="slide_3_title">Traffic Updates</string>
-    <string name="slide_3_desc">Receive traffic updates on the go with Tatu Safety fetched straight from twitter!</string>
+    <string name="slide_3_desc">Receive up to-date traffic updates on the go with Tatu Safety fetched straight from twitter!</string>
 
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
