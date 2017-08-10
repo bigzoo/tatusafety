@@ -15,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -184,6 +185,7 @@ public class NewReportActivity extends FragmentActivity{
         this.startService(i);
 
         db.fetchUnsyncedRecords();
+        finish();
         Intent intent = new Intent(NewReportActivity.this,HistoryActivity.class);
         Toast.makeText(this, "Record sent succesfully", Toast.LENGTH_SHORT).show();
         startActivity(intent);
@@ -192,5 +194,14 @@ public class NewReportActivity extends FragmentActivity{
 
 
 //        }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
