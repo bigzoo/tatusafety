@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(newReport);
 
         } else if (id == R.id.nav_findMe) {
-            Intent findMe = new Intent(this, MapsActivity.class);
+            Intent findMe = new Intent(this, FindMeActivity.class);
             startActivity(findMe);
 
         } else if (id == R.id.nav_history) {
