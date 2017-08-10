@@ -89,7 +89,7 @@ public class NewReportActivity extends FragmentActivity{
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
+        locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 2, new LocationListener() {
 
             @Override
             public void onLocationChanged(Location location){
