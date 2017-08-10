@@ -15,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -104,6 +105,15 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
         mMap.addMarker(new MarkerOptions().position(locationRecieved).title("You Are Here"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(locationRecieved));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
 
