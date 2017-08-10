@@ -97,10 +97,9 @@ public class NewReportActivity extends FragmentActivity{
                 longitude = location.getLongitude();
                 speed = location.getSpeed();
                 speed = speed *18/5;
-                tvLongitude.append(String.format("%.2f", location.getLongitude()));
-                tvLatitude.append(String.format("%.2f", location.getLatitude()));
-                tvSpeed.append(String.format("%.2f", speed));
-                Log.d("LOGLong",String.valueOf(longitude));
+                tvLongitude.setText("Your Current Longitude is: ".concat(String.format("%.2f", location.getLongitude())));
+                tvLatitude.setText("Your Current Latitude is:".concat(String.format("%.2f", location.getLatitude())));
+                tvSpeed.setText("Your Current Speed(km/h) is: ".concat(String.format("%.2f", speed)));
             }
 
             @Override
