@@ -26,7 +26,7 @@
     <string name="login_phone_label">Login With Phone</string>
     <string name="login_email_label">Login With Email</string>
     <string name="title_activity_find_me">Find Me!</string>
-    <string name="find_me_description">This Feature of Tatu Safety is able to track your location based on your phone\'s GPS. Please ensure you have enabled GPS on your phone.</string>
+    <string name="find_me_description">Please ensure you have enabled GPS on your phone.If you see nothing on the map click here </string>
     <string name="latitude_header">Latitude:</string>
     <string name="longitude_header">Longitude:</string>
     <string name="altitude_header">Altitude(m):</string>

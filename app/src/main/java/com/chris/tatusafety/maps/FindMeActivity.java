@@ -3,6 +3,7 @@ package com.chris.tatusafety.maps;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
@@ -10,12 +11,16 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,27 +34,38 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.util.List;
 
-public class FindMeActivity extends FragmentActivity implements OnMapReadyCallback {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+import static java.security.AccessController.getContext;
+
+public class FindMeActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
 
     TextView tvLatitude, tvLongitude, tvSpeed, tvAltitude;
     LocationManager locManager;
     private GoogleMap mMap;
     double latitude, longitude;
+    @Bind(R.id.textView3) TextView mClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_find_me);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        ButterKnife.bind(this);
         mapFragment.getMapAsync(this);
         tvLatitude = (TextView) findViewById(R.id.tvLatitude);
         tvLongitude = (TextView) findViewById(R.id.tvLongitude);
         tvSpeed = (TextView) findViewById(R.id.tvSpeed);
         tvAltitude = (TextView) findViewById(R.id.tvAltitude);
         locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        mClick.setOnClickListener(this);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -90,7 +106,10 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
 
             @Override
             public void onProviderDisabled(String provider) {
-                Toast.makeText(FindMeActivity.this, "GPS Disabled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FindMeActivity.this, "Please Enable GPS", Toast.LENGTH_SHORT).show();
+                Intent onGPS = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(onGPS);
+
             }
 
         });
@@ -114,6 +133,16 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
             finish();
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(FindMeActivity.this, "Please Enable GPS in permissions", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        Uri.fromParts("package", getPackageName(), null));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
     }
 }
 

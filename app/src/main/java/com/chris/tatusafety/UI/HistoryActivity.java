@@ -1,6 +1,7 @@
 package com.chris.tatusafety.UI;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.chris.tatusafety.Database;
 import com.chris.tatusafety.R;
@@ -27,6 +29,7 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+       Toast.makeText(HistoryActivity.this,"These are where you can view reports that you sent",Toast.LENGTH_SHORT).show();
         list = (ListView) findViewById(R.id.historyList);
         Database db = new Database(this);
         data = db.getAllRecords();
@@ -53,6 +56,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         if (item.getTitle().equals("Share"))
         {
+            Toast.makeText(HistoryActivity.this,"huhu",Toast.LENGTH_LONG).show();
             String details = "Road is "+ x.getRoad() +"\n and Sacco is "+ x.getSacco() +"\n on date "+ x.getDate();
             Intent share = new Intent(Intent.ACTION_SEND);
             share.putExtra(Intent.EXTRA_TEXT,details);
