@@ -49,14 +49,12 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mFindButton) {
-            Intent intent = new Intent(HelpActivity.this, MapsActivity.class);
+            Intent intent = new Intent(HelpActivity.this, FindMeActivity.class);
             startActivity(intent);
             Toast.makeText(HelpActivity.this,"Travelling ...",Toast.LENGTH_SHORT).show();
         }
         if (v == mStagesButton) {
-            Intent intent = new Intent(HelpActivity.this, StagesActivity.class);
-            startActivity(intent);
-            Toast.makeText(HelpActivity.this,"Travelling ...",Toast.LENGTH_SHORT).show();
+            Toast.makeText(HelpActivity.this,"Coming soon",Toast.LENGTH_SHORT).show();
         }
         if (v == mMainActivity) {
             Intent intent = new Intent(HelpActivity.this, MainActivity.class);
