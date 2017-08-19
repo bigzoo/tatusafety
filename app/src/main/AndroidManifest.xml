@@ -96,7 +96,11 @@
         <activity android:name=".UI.NewReportActivity" />
         <activity
             android:name=".UI.HistoryActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
 
         <receiver android:name=".NetWatcher">
             <intent-filter>
@@ -141,9 +145,6 @@
         <activity
             android:name=".UI.HelpActivity"
             android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chris.tatusafety.MainActivity" />
         </activity>
         <activity
             android:name=".SplashScreen"

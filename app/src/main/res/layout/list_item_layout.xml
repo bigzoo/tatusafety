@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
 
     android:orientation="horizontal"
-    android:padding="5dip">
+    android:padding="10dip">
 
     <TextView
 
@@ -39,11 +39,11 @@
 
         android:layout_alignLeft="@+id/tvRoad"
 
-        android:layout_below="@+id/tvRoad"
+        android:layout_below="@+id/tvDate"
 
         android:layout_centerHorizontal="true"
 
-        android:paddingTop="5dip"
+        android:paddingTop="10dip"
 
         android:text="Sacco"
 
@@ -54,36 +54,28 @@
     <TextView
 
         android:id="@+id/tvDate"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
+        android:layout_below="@id/tvRoad"
         android:paddingTop="5dip"
         android:text="Date:"
         android:textColor="#343434"
         android:textSize="15dip"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="39dp"
-        android:layout_marginEnd="39dp"
-        android:layout_alignParentTop="true" />
+        />
 
     <TextView
 
         android:id="@+id/tvTime"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
+       android:layout_toRightOf="@id/tvDate"
+        android:layout_below="@id/tvRoad"
         android:paddingTop="5dip"
         android:text="Time"
+        android:layout_marginLeft="150dp"
         android:textColor="#343434"
         android:textSize="15dip"
-        android:layout_below="@+id/tvRoad"
-        android:layout_alignLeft="@+id/tvDate"
-        android:layout_alignStart="@+id/tvDate" />
+        />
     <TextView
 
         android:id="@+id/tvPlate"
@@ -104,15 +96,13 @@
         android:id="@+id/tvCounty"
 
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:paddingTop="10dip"
-        android:text="Time"
+        android:text="County"
         android:textColor="#343434"
         android:textSize="15dip"
-        android:layout_below="@+id/tvTime"
-        android:layout_alignLeft="@+id/tvDate" />
+        android:layout_below="@+id/tvPlate"
+         />
     <TextView
 
         android:id="@+id/tvDesc"
@@ -125,7 +115,7 @@
         android:text="Description"
         android:textColor="#343434"
         android:textSize="15dip"
-        android:layout_below="@+id/tvPlate"
+        android:layout_below="@+id/tvCounty"
         android:paddingBottom="10dp"
         />
     <View
