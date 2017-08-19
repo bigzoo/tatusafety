@@ -55,6 +55,18 @@
         android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="italic" />
+            <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="10dp"
+                android:text="Date here"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:layout_below="@+id/tweetTextView"
+                />
 
 
 
@@ -63,7 +75,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:background="#9EA3B0"
-       android:layout_below="@+id/tweetTextView"/>
+       android:layout_below="@+id/dateTime"/>
         </RelativeLayout>
     </ScrollView>
 

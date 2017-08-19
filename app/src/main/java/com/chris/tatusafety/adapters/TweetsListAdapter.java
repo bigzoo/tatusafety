@@ -70,6 +70,7 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
         @Bind(R.id.tweetTextView) TextView mTweetTextView;
         @Bind(R.id.tweetUserTextView) TextView mUserTextView;
         @Bind(R.id.tweetUserText) TextView mTweetUser;
+        @Bind(R.id.dateTime)TextView mDates;
 
 
         private Context mContext;
@@ -87,6 +88,7 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             mTweetUser.setText(tweet.getUser());
             mUserTextView.setText("@"+ tweet.getUser());
             mTweetTextView.setText(tweet.getTweetText());
+            mDates.setText(tweet.getDate());
         }
 
         @Override

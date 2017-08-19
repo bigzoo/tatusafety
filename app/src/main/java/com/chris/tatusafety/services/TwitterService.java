@@ -82,7 +82,7 @@ public class TwitterService {
                     if (tweetObject.getJSONObject("entities").getJSONArray("urls").length() > 0) {
                         externalLink = tweetObject.getJSONObject("entities").getJSONArray("urls").getJSONObject(0).getString("url");
                     } else {
-                        externalLink = "No external links";
+                        externalLink = "Null";
                     }
                     String user = tweetObject.getJSONObject("user").getString("name");
                     String created = tweetObject.getString("created_at");
