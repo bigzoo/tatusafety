@@ -91,7 +91,7 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
             return;
         }
 
-        locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 2, new LocationListener() {
+        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
 
             @Override
             public void onLocationChanged(Location location) {
