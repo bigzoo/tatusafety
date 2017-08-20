@@ -79,6 +79,8 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
         @Bind(R.id.tweetUserTextView) TextView mUserTextView;
         @Bind(R.id.tweetUserText) TextView mTweetUser;
         @Bind(R.id.dateTime)TextView mDates;
+        @Bind(R.id.wholeThing) RelativeLayout mWhole;
+        private String decide = "Carter";
 
 
         private Context mContext;
@@ -87,7 +89,9 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             super(itemView);
             ButterKnife.bind(this,itemView);
             mContext = itemView.getContext();
+            mWhole.setOnClickListener(this);
             itemView.setOnClickListener(this);
+
 
         }
 
@@ -96,6 +100,11 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             mUserTextView.setText("@"+ tweet.getUser());
             mTweetTextView.setText(tweet.getTweetText());
             String givenDateString = tweet.getDate();
+            if (tweet.getExternalLink().equals("Null")) {
+               decide = "Cart";
+            } else {
+                decide = "John";
+            }
             SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
             try {
                 Date mDate = sdf.parse(givenDateString);
@@ -123,23 +132,29 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             }
 
         }
-
+        public void LinkView(Tweet tweet,View v){
+            if (tweet.getExternalLink().equals("Null")) {
+                Toast.makeText(v.getContext(),"No external link available", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(tweet.getExternalLink()));
+                mContext.startActivity(webIntent);
+            }
+        }
         @Override
         public void onClick(View v) {
-//            if (v == mLink) {
-//                if (mTweet.getExternalLink().equals("No external links")) {
-//                    Toast.makeText(v.getContext(), "No external link available", Toast.LENGTH_SHORT).show();
-//                } else {
+            if (v == mWhole) {
+//                if(decide == "John"){
 //                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mTweet.getExternalLink()));
 //                    mContext.startActivity(webIntent);
 //                }
-//            }
 
-                int itemPosition = getLayoutPosition();
-                Intent intent = new Intent(mContext, SpecificTweetActivity.class);
-                Tweet clickedTweet = mTweets.get(itemPosition);
-                intent.putExtra("tweet", Parcels.wrap(clickedTweet));
-                mContext.startActivity(intent);
+            }
+//
+//                int itemPosition = getLayoutPosition();
+//                Intent intent = new Intent(mContext, SpecificTweetActivity.class);
+//                Tweet clickedTweet = mTweets.get(itemPosition);
+//                intent.putExtra("tweet", Parcels.wrap(clickedTweet));
+//                mContext.startActivity(intent);
         }
     }
 

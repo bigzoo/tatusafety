@@ -1,5 +1,6 @@
 package com.chris.tatusafety.UI;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -49,7 +50,6 @@ public class TweetsActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 getTweets(traffic);
-                Toast.makeText(TweetsActivity.this,"Updating...",Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -67,6 +67,8 @@ public class TweetsActivity extends AppCompatActivity {
             public void onFailure(Request request, IOException e) {
                 e.printStackTrace();
                 Log.e("Traffic Activity", "Failed to make API call");
+//                Toast.makeText(getApplicationContext(), "Bigger fail", Toast.LENGTH_LONG).show();
+
             }
 
             @Override

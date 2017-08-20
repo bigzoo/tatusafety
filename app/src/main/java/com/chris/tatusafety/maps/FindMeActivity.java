@@ -80,7 +80,7 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
         mClick.setOnClickListener(this);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT >= 23) {
+            if (Build.VERSION.SDK_INT >= 22) {
             ActivityCompat.requestPermissions(FindMeActivity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     1);
@@ -91,7 +91,7 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
             return;
         }
 
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
+        locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 2, new LocationListener() {
 
             @Override
             public void onLocationChanged(Location location) {
