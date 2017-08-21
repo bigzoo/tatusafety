@@ -1,7 +1,11 @@
 package com.chris.tatusafety.UI;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.provider.Settings;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,7 +48,12 @@ public class TweetsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefresher);
         final String traffic = "Ma3Route";
-        getTweets(traffic);
+       if (haveNetworkConnection() == true){
+           getTweets(traffic);
+       }
+       else {
+           startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+       }
         Toast.makeText(TweetsActivity.this, "Fetching traffic updates ... ", Toast.LENGTH_LONG).show();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -53,6 +62,7 @@ public class TweetsActivity extends AppCompatActivity {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+
 
 
 //        ActionBar ab = getSupportActionBar();
@@ -67,7 +77,7 @@ public class TweetsActivity extends AppCompatActivity {
             public void onFailure(Request request, IOException e) {
                 e.printStackTrace();
                 Log.e("Traffic Activity", "Failed to make API call");
-//                Toast.makeText(getApplicationContext(), "Bigger fail", Toast.LENGTH_LONG).show();
+//             Toast.makeText(getApplicationContext(), "Bigger fail", Toast.LENGTH_LONG).show();
 
             }
 
@@ -96,6 +106,24 @@ public class TweetsActivity extends AppCompatActivity {
 
     }
 
+
+
+    private boolean haveNetworkConnection() {
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveConnectedWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveConnectedMobile = true;
+        }
+        return haveConnectedWifi || haveConnectedMobile;
+    }
 }
 
 
