@@ -9,7 +9,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:id="@+id/wholeThing">
             <TextView
                 android:id="@+id/tweetUserText"
                 android:layout_width="wrap_content"
@@ -31,7 +32,7 @@
 
     <TextView
         android:id="@+id/tweetUserTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="10dp"
@@ -55,6 +56,20 @@
         android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="italic" />
+            <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="50dp"
+                android:text="Date here"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/tweetUserText"
+                android:layout_toRightOf="@id/tweetUserTextView"
+                android:layout_marginTop="10dp"/>
+
 
 
     <View
@@ -62,7 +77,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:background="#9EA3B0"
-        android:layout_below="@id/tweetTextView"/>
+       android:layout_below="@+id/tweetTextView"/>
         </RelativeLayout>
     </ScrollView>
 

@@ -28,6 +28,7 @@ import com.chris.tatusafety.UI.SettingsActivity;
 import com.chris.tatusafety.UI.SpecificTweetActivity;
 import com.chris.tatusafety.UI.StagesActivity;
 import com.chris.tatusafety.UI.TweetsActivity;
+import com.chris.tatusafety.UI.Welcome_Activity;
 import com.chris.tatusafety.adapters.CustomListAdapter;
 import com.chris.tatusafety.maps.FindMeActivity;
 import com.chris.tatusafety.maps.MapsActivity;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Bind(R.id.tvDate) TextView mDateText;
     @Bind(R.id.tvSacco) TextView mSacco;
     @Bind(R.id.tvTime) TextView mTime;
+    @Bind(R.id.tvDesc) TextView mDescr;
+    @Bind(R.id.tvPlate) TextView mPlate;
+    @Bind(R.id.tvCounty) TextView mCounty;
+
 
 
     @Override
@@ -67,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fetch();
         Intent i = new Intent(this, SyncService.class);
         this.startService(i);
-        Toast.makeText(this, "Syncing...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Syncing Reports from other users ...", Toast.LENGTH_LONG).show();
 
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -151,16 +156,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if (id == R.id.nav_explore) {
+            Toast.makeText(MainActivity.this,"Coming soon",Toast.LENGTH_SHORT).show();
             Intent main = new Intent(this, MapsActivity.class);
             startActivity(main);
-            finish();
+//            finish();
             // Handle the camera action
         } else if (id == R.id.nav_report) {
-            Intent newReport = new Intent(this, FormActivity.class);
+            Intent newReport = new Intent(this, NewReportActivity.class);
             startActivity(newReport);
 
         } else if (id == R.id.nav_findMe) {
-            Intent findMe = new Intent(this, MapsActivity.class);
+            Intent findMe = new Intent(this, FindMeActivity.class);
             startActivity(findMe);
 
         } else if (id == R.id.nav_history) {
@@ -216,7 +222,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         String sacco = obj.getString("sacco");
                         String date = obj.getString("date");
                         String time = obj.getString("time");
-                        Report r = new Report(date, time, road, sacco);
+                        String extra = obj.getString("extras");
+                        String plates = obj.getString("plates");
+                        String county = obj.getString("county");
+
+                        Report r = new Report(date, time, road, sacco, plates,county,extra);
                         data.add(r);
                     }
                     adapter.notifyDataSetChanged();

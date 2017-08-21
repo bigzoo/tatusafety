@@ -23,17 +23,15 @@ tools:context="com.chris.tatusafety.UI.LoginActivity"
     android:textAlignment="center"
     android:drawableTop="@drawable/tatu_logos"
     android:drawablePadding="30dp"
-    android:layout_alignBottom="@+id/email_login_button"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true" />
+    android:layout_marginTop="21dp"
+    android:layout_below="@+id/background"
+    android:layout_toRightOf="@+id/background"
+    android:layout_toEndOf="@+id/background" />
     <Button
         android:id="@+id/email_login_button"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:textAlignment="center"
         android:onClick="onEmailLogin"
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="230dp"
         android:text="LOGIN WITH EMAIL"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -44,18 +42,16 @@ tools:context="com.chris.tatusafety.UI.LoginActivity"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        />
+        android:layout_alignTop="@+id/title"
+        android:layout_alignLeft="@+id/anonymous_login_button"
+        android:layout_alignStart="@+id/anonymous_login_button"
+        android:layout_marginTop="212dp" />
 
 <Button
     android:id="@+id/phone_login_button"
-    android:text="LOGIN WITH PHONE"
-
     android:textAlignment="center"
     android:onClick="onPhoneLogin"
-    android:layout_marginLeft="45dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="310dp"
+    android:layout_marginTop="31dp"
     android:textColor="#000000"
     android:textSize="16sp"
     android:layout_width="270dp"
@@ -64,7 +60,11 @@ tools:context="com.chris.tatusafety.UI.LoginActivity"
     android:shadowColor="#A8A8A8"
     android:shadowDx="0"
     android:shadowDy="0"
-    android:shadowRadius="5"/>
+    android:text="Login With Phone"
+    android:shadowRadius="5"
+    android:layout_below="@+id/email_login_button"
+    android:layout_alignLeft="@+id/email_login_button"
+    android:layout_alignStart="@+id/email_login_button" />
 
 
 
@@ -74,7 +74,7 @@ tools:context="com.chris.tatusafety.UI.LoginActivity"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:textAlignment="center"
         android:onClick="onAnonymousLogin"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="22dp"
         android:textColor="#000000"
         android:textSize="16sp"
         android:layout_width="270dp"
@@ -85,7 +85,6 @@ tools:context="com.chris.tatusafety.UI.LoginActivity"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_below="@+id/phone_login_button"
-        android:layout_alignLeft="@+id/phone_login_button"
-        android:layout_alignStart="@+id/phone_login_button" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

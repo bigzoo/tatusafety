@@ -123,6 +123,7 @@ public class Database extends SQLiteOpenHelper {
         Gson g=new Gson();
         String json = g.toJson(data);
         Log.d("JSONDATA",json);
+        db.close();
         return json;
 
     }
@@ -145,6 +146,7 @@ public class Database extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
 
         }
+        db.close();
     }
 
 
@@ -178,7 +180,9 @@ public class Database extends SQLiteOpenHelper {
                 data.add(new Report(id,latitude,longitude,date,time,road,sacco,speed,plates,county,extras,status,uuid));
 
             }while (cursor.moveToNext());
-        } return data;
+        }
+        db.close();
+        return data;
     }
     public void deleteRecord(String id)
     {

@@ -2,17 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.chris.tatusafety"
-    android:versionCode="2"
-    android:versionName="1.2">
+    android:versionCode="3"
+    android:versionName="1.3">
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
-
-    <permission
-        android:name="com.chris.tatusafety.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
-
     <uses-permission android:name="com.chris.tatusafety.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -26,11 +21,17 @@
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.chris.tatusafety.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -95,7 +96,11 @@
         <activity android:name=".UI.NewReportActivity" />
         <activity
             android:name=".UI.HistoryActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.chris.tatusafety.MainActivity" />
+        </activity>
 
         <receiver android:name=".NetWatcher">
             <intent-filter>
@@ -140,18 +145,15 @@
         <activity
             android:name=".UI.HelpActivity"
             android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chris.tatusafety.MainActivity" />
         </activity>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".UI.FormActivity" />
 
@@ -167,11 +169,7 @@
         <!-- android:name="com.google.android.maps.v2.API_KEY" -->
         <!-- android:value="AIzaSyB3AAJaVlM3T9K4LKdV2iWNXH2ZJO_W9VA"/> -->
         <activity android:name=".UI.Welcome_Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

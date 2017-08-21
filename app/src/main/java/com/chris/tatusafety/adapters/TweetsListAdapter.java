@@ -7,11 +7,16 @@ package com.chris.tatusafety.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chris.tatusafety.Modules.Tweet;
 import com.chris.tatusafety.R;
@@ -21,7 +26,11 @@ import com.chris.tatusafety.UI.TweetsActivity;
 
 import org.parceler.Parcels;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,6 +43,11 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
 
     private ArrayList<Tweet> mTweets = new ArrayList<>();
     private Context mContext;
+    private Tweet mTweet;
+    private static final int SECOND_MILLIS = 1000;
+    private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
+    private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
+    private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
 
     public TweetsListAdapter(Context context,ArrayList<Tweet> tweets){
         mContext = context;
@@ -64,6 +78,10 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
         @Bind(R.id.tweetTextView) TextView mTweetTextView;
         @Bind(R.id.tweetUserTextView) TextView mUserTextView;
         @Bind(R.id.tweetUserText) TextView mTweetUser;
+        @Bind(R.id.dateTime)TextView mDates;
+        @Bind(R.id.wholeThing) RelativeLayout mWhole;
+        private String decide = "Carter";
+
 
         private Context mContext;
 
@@ -71,24 +89,73 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.Tw
             super(itemView);
             ButterKnife.bind(this,itemView);
             mContext = itemView.getContext();
+            mWhole.setOnClickListener(this);
             itemView.setOnClickListener(this);
 
+
         }
+
         private void bindTweet(Tweet tweet) {
             mTweetUser.setText(tweet.getUser());
             mUserTextView.setText("@"+ tweet.getUser());
             mTweetTextView.setText(tweet.getTweetText());
+            String givenDateString = tweet.getDate();
+            if (tweet.getExternalLink().equals("Null")) {
+               decide = "Cart";
+            } else {
+                decide = "John";
+            }
+            SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+            try {
+                Date mDate = sdf.parse(givenDateString);
+                long timeInMilliseconds = mDate.getTime();
+                long now = System.currentTimeMillis();
+                final long diff = now - timeInMilliseconds;
+                if (diff < MINUTE_MILLIS) {
+                    mDates.setText("just now");
+                } else if (diff < 2 * MINUTE_MILLIS) {
+                    mDates.setText("a minute ago");
+                } else if (diff < 50 * MINUTE_MILLIS) {
+                    mDates.setText(diff / MINUTE_MILLIS + " minutes ago");
+                } else if (diff < 90 * MINUTE_MILLIS) {
+                    mDates.setText("an hour ago");
+                } else if (diff < 24 * HOUR_MILLIS) {
+                    mDates.setText(diff / HOUR_MILLIS + " hours ago");
+                } else if (diff < 48 * HOUR_MILLIS) {
+                    mDates.setText("yesterday");
+                } else {
+                    mDates.setText(diff / DAY_MILLIS + " days ago");
+                }
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
         }
-
+        public void LinkView(Tweet tweet,View v){
+            if (tweet.getExternalLink().equals("Null")) {
+                Toast.makeText(v.getContext(),"No external link available", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(tweet.getExternalLink()));
+                mContext.startActivity(webIntent);
+            }
+        }
         @Override
         public void onClick(View v) {
-            int itemPosition = getLayoutPosition();
-            Intent intent = new Intent(mContext,SpecificTweetActivity.class);
-            Tweet clickedTweet = mTweets.get(itemPosition);
-            intent.putExtra("tweet", Parcels.wrap(clickedTweet));
-            mContext.startActivity(intent);
+            if (v == mWhole) {
+//                if(decide == "John"){
+//                    Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mTweet.getExternalLink()));
+//                    mContext.startActivity(webIntent);
+//                }
 
+            }
+//
+//                int itemPosition = getLayoutPosition();
+//                Intent intent = new Intent(mContext, SpecificTweetActivity.class);
+//                Tweet clickedTweet = mTweets.get(itemPosition);
+//                intent.putExtra("tweet", Parcels.wrap(clickedTweet));
+//                mContext.startActivity(intent);
         }
     }
+
 }

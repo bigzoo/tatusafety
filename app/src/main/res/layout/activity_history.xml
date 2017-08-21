@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chris.tatusafety.UI.HistoryActivity">
+    tools:context="com.chris.tatusafety.UI.HistoryActivity"
+    android:background="@color/lightBlue">
 
     <ListView
         android:padding="5dp"

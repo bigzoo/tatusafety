@@ -11,10 +11,12 @@ import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -25,6 +27,7 @@ import android.widget.Toast;
 import com.chris.tatusafety.Database;
 import com.chris.tatusafety.R;
 import com.chris.tatusafety.TimePickerFragment;
+import com.chris.tatusafety.maps.FindMeActivity;
 import com.chris.tatusafety.services.SyncService;
 
 import java.util.Calendar;
@@ -80,16 +83,16 @@ public class NewReportActivity extends FragmentActivity{
         tvSpeed = (TextView) findViewById(R.id.tvSpeedAuto);
         locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+            if (Build.VERSION.SDK_INT >= 23) {
+                ActivityCompat.requestPermissions(NewReportActivity.this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        1);
+                ActivityCompat.requestPermissions(NewReportActivity.this,
+                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                        1);}
             return;
         }
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 2, new LocationListener() {
+        locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 2, new LocationListener() {
 
             @Override
             public void onLocationChanged(Location location){
@@ -97,10 +100,9 @@ public class NewReportActivity extends FragmentActivity{
                 longitude = location.getLongitude();
                 speed = location.getSpeed();
                 speed = speed *18/5;
-                tvLongitude.append(String.format("%.2f", location.getLongitude()));
-                tvLatitude.append(String.format("%.2f", location.getLatitude()));
-                tvSpeed.append(String.format("%.2f", speed));
-                Log.d("LOGLong",String.valueOf(longitude));
+                tvLongitude.setText("Your Current Longitude is: ".concat(String.format("%.2f", location.getLongitude())));
+                tvLatitude.setText("Your Current Latitude is:".concat(String.format("%.2f", location.getLatitude())));
+                tvSpeed.setText("Your Current Speed(km/h) is: ".concat(String.format("%.2f", speed)));
             }
 
             @Override
@@ -164,12 +166,23 @@ public class NewReportActivity extends FragmentActivity{
         final String County = county.getText().toString();
         final String Extras = extras.getText().toString();
         final String Status = "unsynced";
+
         final String Uuid = java.util.UUID.randomUUID().toString();
-//        if (speed<0) {
-//            Log.d("DATE PICKED",Date);
-//            Toast.makeText(this, "You cannot submit report with a speed value less than 60!", Toast.LENGTH_SHORT).show();
-//        }
-//        else {
+        if (Extras.equals("")) {
+            extras.setError("Please enter a description ");
+           if(County.equals("")) {
+               county.setError("Please enter a County ");
+           } if (Plates.equals("")){
+               plates.setError("Please enter a Number plate ");
+           }
+            if (Sacco.equals("")){
+               sacco.setError("Please enter a sacco name ");
+            }
+            if (Road.equals("")){
+                road.setError("Please enter a road name");
+            }
+           }
+        else {
         Report report = new Report(null,Latitude,Longitude,Date,Time,Road,Sacco,Speed,Plates,County,Extras,Status,Uuid);
         Database db = new Database(this);
         db.insertReport(report);
@@ -185,13 +198,22 @@ public class NewReportActivity extends FragmentActivity{
         this.startService(i);
 
         db.fetchUnsyncedRecords();
+        finish();
         Intent intent = new Intent(NewReportActivity.this,HistoryActivity.class);
-        Toast.makeText(this, "Record sent succesfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Report sent succesfully", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         Log.d("JSON_DATA", db.fetchUnsyncedRecords());
 
+        }
+    }
 
-
-//        }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

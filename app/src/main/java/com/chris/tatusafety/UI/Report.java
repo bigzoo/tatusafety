@@ -14,12 +14,15 @@ public class Report {
         this.uuid = uuid;
     }
 
-    public Report(String date, String time, String road, String sacco) {
+    public Report(String date, String time, String road, String sacco , String plates, String  county, String extras) {
 
         this.date = date;
         this.time = time;
         this.road = road;
         this.sacco = sacco;
+        this.plates = plates;
+        this.county =county;
+        this.extras =extras;
     }
     public Report(String latitude, String longitude, String date, String time, String road, String sacco, String speed, String plates, String county, String extras, String status) {
         this.latitude = latitude;

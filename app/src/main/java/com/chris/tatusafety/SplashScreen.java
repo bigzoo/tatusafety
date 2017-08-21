@@ -2,6 +2,7 @@ package com.chris.tatusafety;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,9 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chris.tatusafety.UI.HelpActivity;
 import com.chris.tatusafety.UI.LoginActivity;
+import com.chris.tatusafety.UI.Welcome_Activity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -97,8 +100,13 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 finish();
-                Intent i = new Intent(getBaseContext(), LoginActivity.class);
-                startActivity(i);
+                Intent i = new Intent(getBaseContext(), Welcome_Activity.class);
+                Intent j = new Intent(getBaseContext(), HelpActivity.class);
+             if (Build.VERSION.SDK_INT >= 21) {
+                 startActivity(i);
+             } else if (Build.VERSION.SDK_INT == 19) {
+                 startActivity(j);
+             }
             }
 
             @Override
