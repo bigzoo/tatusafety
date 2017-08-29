@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 
 public class SyncService extends Service{
+
     @Override
     public int onStartCommand(Intent intent , int flags, int startId) {
 
