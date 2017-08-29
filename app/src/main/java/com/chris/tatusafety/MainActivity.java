@@ -157,8 +157,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_explore) {
             Toast.makeText(MainActivity.this,"Coming soon",Toast.LENGTH_SHORT).show();
-            Intent main = new Intent(this, MapsActivity.class);
-            startActivity(main);
 //            finish();
             // Handle the camera action
         } else if (id == R.id.nav_report) {
