@@ -13,4 +13,7 @@ public class Constants {
     public static final String QUERY_PARAMETERS = "q";
     public static final String RESULT_PARAMETERS = "result_type";
     public static final String COUNT = "count";
+    public static final String POST_URL = "https://api.twitter.com/1.1/statuses/update.json";
+    public static final String POST_PARAMETERS = "status";
+
 }

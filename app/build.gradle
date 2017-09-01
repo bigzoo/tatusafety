@@ -16,7 +16,7 @@ android {
         release {
             minifyEnabled false
             shrinkResources false
-             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     buildTypes.each {
@@ -40,6 +40,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.loopj.android:android-async-http:1.4.9'
@@ -62,6 +63,10 @@ dependencies {
     compile 'se.akerfeldt:okhttp-signpost:1.1.0'
     compile 'oauth.signpost:signpost-core:1.2.1.2'
     compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    compile 'com.twitter.sdk.android:twitter:3.1.1'
+    compile 'com.twitter.sdk.android:twitter-core:3.1.1'
+    compile 'com.twitter.sdk.android:tweet-ui:3.1.1'
+    compile 'com.twitter.sdk.android:tweet-composer:3.1.1'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

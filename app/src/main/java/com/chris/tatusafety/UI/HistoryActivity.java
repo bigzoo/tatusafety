@@ -29,7 +29,9 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-       Toast.makeText(HistoryActivity.this,"These are where you can view reports that you sent",Toast.LENGTH_SHORT).show();
+       Toast.makeText(HistoryActivity.this,"The reports you send are stored here",Toast.LENGTH_SHORT).show();
+        Toast.makeText(HistoryActivity.this,"Long press a report to view options",Toast.LENGTH_SHORT).show();
+
         list = (ListView) findViewById(R.id.historyList);
         Database db = new Database(this);
         data = db.getAllRecords();
@@ -57,7 +59,7 @@ public class HistoryActivity extends AppCompatActivity {
         if (item.getTitle().equals("Share"))
         {
 //            Toast.makeText(HistoryActivity.this,"huhu",Toast.LENGTH_LONG).show();
-            String details = "This is a report from the tatu safety app. "+" Road:"+ x.getRoad() +"\n and Sacco is "+ x.getSacco() +"\n on date "+ x.getDate() +" additional info :" + x.getExtras();
+            String details = "This is a report from the tatu safety app. "+" Road: "+ x.getRoad() +"\n and Sacco is "+ x.getSacco() +"\n on date "+ x.getDate() +" additional info :" + x.getExtras() + " Number plate of vehicle "+x.getPlates() +" in "+x.getCounty();
             Intent share = new Intent(Intent.ACTION_SEND);
             share.putExtra(Intent.EXTRA_TEXT,details);
             share.setType("text/plain");

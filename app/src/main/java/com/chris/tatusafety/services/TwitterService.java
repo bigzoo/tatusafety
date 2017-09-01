@@ -57,6 +57,24 @@ public class TwitterService {
         Call call1 = client.newCall(request);
         call1.enqueue(callback);
     }
+    public static void PostTweets(String input, Callback callback) {
+        OkHttpOAuthConsumer consumer = new OkHttpOAuthConsumer(Constants.CONSUMER_KEY,Constants.CONSUMER_SECRET);
+        consumer.setTokenWithSecret(Constants.TOKEN,Constants.TOKEN_SECRET);
+
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new SigningInterceptor(consumer)).build();
+
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.POST_URL).newBuilder();
+        urlBuilder.addQueryParameter(Constants.POST_PARAMETERS,input);
+
+        String url = urlBuilder.build().toString();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        Call call1 = client.newCall(request);
+        call1.enqueue(callback);
+    }
     public ArrayList<Tweet> processResults(Response response) {
         ArrayList<Tweet> tweets = new ArrayList<>();
         try {

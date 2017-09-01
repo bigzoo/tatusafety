@@ -92,13 +92,13 @@ public class TweetsActivity extends AppCompatActivity {
         final TwitterService twitterService = new TwitterService();
         twitterService.findTweets(topic, new Callback() {
             @Override
-            public void onFailure(Request request, IOException e) {
+            public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
                 Log.e("Traffic Activity", "Failed to make API call");
             }
 
             @Override
-            public void onResponse(Response response) throws IOException {
+            public void onResponse(Call call, Response response) throws IOException {
                 mTweets = twitterService.processResults(response);
                 TweetsActivity.this.runOnUiThread(new Runnable() {
                     @Override
