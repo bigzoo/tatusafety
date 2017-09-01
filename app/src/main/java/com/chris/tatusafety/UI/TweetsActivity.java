@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.Modules.Tweet;
@@ -34,6 +35,7 @@ public class TweetsActivity extends AppCompatActivity {
 
     @Bind(R.id.tweetsRecyclerView)
     RecyclerView mRecyclerView;
+    @Bind(R.id.traffic)TextView mTitle;
     SwipeRefreshLayout swipeRefreshLayout;
 
     public static final String TAG = TweetsActivity.class.getSimpleName();
@@ -50,11 +52,15 @@ public class TweetsActivity extends AppCompatActivity {
         final String traffic = "Ma3Route";
        if (haveNetworkConnection() == true){
            getTweets(traffic);
+           Toast.makeText(TweetsActivity.this, "Fetching traffic updates ... ", Toast.LENGTH_LONG).show();
+           mTitle.setText("Traffic updates");
+
        }
        else {
-           startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+           Toast.makeText(TweetsActivity.this,"Please enable your internet connection",Toast.LENGTH_SHORT).show();
+           mTitle.setText("No Internet connection available.");
        }
-        Toast.makeText(TweetsActivity.this, "Fetching traffic updates ... ", Toast.LENGTH_LONG).show();
+
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -77,8 +83,6 @@ public class TweetsActivity extends AppCompatActivity {
             public void onFailure(Request request, IOException e) {
                 e.printStackTrace();
                 Log.e("Traffic Activity", "Failed to make API call");
-//             Toast.makeText(getApplicationContext(), "Bigger fail", Toast.LENGTH_LONG).show();
-
             }
 
             @Override

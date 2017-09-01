@@ -2,6 +2,8 @@ package com.chris.tatusafety.UI;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -107,4 +109,5 @@ public class LoginActivity extends AppCompatActivity {
         AccessToken accessToken = null;
         loginSuccess();
     }
+
 }

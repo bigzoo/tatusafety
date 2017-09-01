@@ -32,7 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/traffic"
             android:padding="0dp" />
+
     </android.support.v4.widget.SwipeRefreshLayout>
+
 
 
 </RelativeLayout>

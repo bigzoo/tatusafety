@@ -1,8 +1,14 @@
 package com.chris.tatusafety;
 
+import android.*;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +28,7 @@ import com.chris.tatusafety.UI.AccountActivity;
 import com.chris.tatusafety.UI.FormActivity;
 import com.chris.tatusafety.UI.HelpActivity;
 import com.chris.tatusafety.UI.HistoryActivity;
+import com.chris.tatusafety.UI.LoginActivity;
 import com.chris.tatusafety.UI.NewReportActivity;
 import com.chris.tatusafety.UI.Report;
 import com.chris.tatusafety.UI.SettingsActivity;

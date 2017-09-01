@@ -1,9 +1,11 @@
 package com.chris.tatusafety.UI;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chris.tatusafety.MainActivity;
 import com.chris.tatusafety.PrefManager;
 import com.chris.tatusafety.R;
 import com.chris.tatusafety.SplashScreen;
@@ -127,6 +130,20 @@ public class Welcome_Activity extends AppCompatActivity{
         prefManager.setIsFirstTimeLaunch(false);
         startActivity(new Intent(Welcome_Activity.this, LoginActivity.class));
         finish();
+        if (Build.VERSION.SDK_INT >= 21) {
+            ActivityCompat.requestPermissions(Welcome_Activity.this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    1);
+            ActivityCompat.requestPermissions(Welcome_Activity.this,
+                    new String[]{Manifest.permission.RECEIVE_SMS},
+                    1);
+            ActivityCompat.requestPermissions(Welcome_Activity.this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    1);
+            ActivityCompat.requestPermissions(Welcome_Activity.this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    1);
+        }
     }
 
     //  viewpager change listener
@@ -206,5 +223,6 @@ public class Welcome_Activity extends AppCompatActivity{
             container.removeView(view);
         }
     }
+
 }
 //http://go.redirectro.com/v1/hostedsearch?pid=252428&subid=9655019&keyword=chapo
