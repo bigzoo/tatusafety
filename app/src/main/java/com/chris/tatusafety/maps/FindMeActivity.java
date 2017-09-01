@@ -80,7 +80,7 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
         mClick.setOnClickListener(this);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT >= 22) {
+            if (Build.VERSION.SDK_INT >= 21) {
             ActivityCompat.requestPermissions(FindMeActivity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     1);
@@ -158,30 +158,7 @@ public class FindMeActivity extends FragmentActivity implements OnMapReadyCallba
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
     }
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode,
-//                                           String permissions[], int[] grantResults) {
-//        switch (requestCode) {
-//            case MY_PERMISSIONS_REQUEST_FINE_LOCATION: {
-//                // If request is cancelled, the result arrays are empty.
-//                if (grantResults.length > 0
-//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//
-//                    // permission was granted, yay! Do the
-//                    // contacts-related task you need to do.
-//
-//                } else {
-//
-//                    // permission denied, boo! Disable the
-//                    // functionality that depends on this permission.
-//                }
-//                return;
-//            }
-//
-//            // other 'case' lines to check for other
-//            // permissions this app might request
-//        }
-//    }
+
 }
 
 

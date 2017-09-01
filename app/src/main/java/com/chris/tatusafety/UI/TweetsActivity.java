@@ -65,7 +65,18 @@ public class TweetsActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getTweets(traffic);
+
+                if (haveNetworkConnection() == true){
+                    getTweets(traffic);
+                    Toast.makeText(TweetsActivity.this, "Fetching traffic updates ... ", Toast.LENGTH_LONG).show();
+                    mTitle.setText("Traffic updates");
+
+                }
+                else {
+                    Toast.makeText(TweetsActivity.this,"Please enable your internet connection",Toast.LENGTH_SHORT).show();
+                    mTitle.setText("No Internet connection available.");
+                }
+
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
