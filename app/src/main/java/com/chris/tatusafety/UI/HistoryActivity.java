@@ -56,8 +56,8 @@ public class HistoryActivity extends AppCompatActivity {
 
         if (item.getTitle().equals("Share"))
         {
-            Toast.makeText(HistoryActivity.this,"huhu",Toast.LENGTH_LONG).show();
-            String details = "Road is "+ x.getRoad() +"\n and Sacco is "+ x.getSacco() +"\n on date "+ x.getDate();
+//            Toast.makeText(HistoryActivity.this,"huhu",Toast.LENGTH_LONG).show();
+            String details = "This is a report from the tatu safety app. "+" Road:"+ x.getRoad() +"\n and Sacco is "+ x.getSacco() +"\n on date "+ x.getDate() +" additional info :" + x.getExtras();
             Intent share = new Intent(Intent.ACTION_SEND);
             share.putExtra(Intent.EXTRA_TEXT,details);
             share.setType("text/plain");

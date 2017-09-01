@@ -4,6 +4,7 @@ import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chris.tatusafety.UI.AccountActivity;
+import com.chris.tatusafety.UI.App_rater;
 import com.chris.tatusafety.UI.FormActivity;
 import com.chris.tatusafety.UI.HelpActivity;
 import com.chris.tatusafety.UI.HistoryActivity;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent i = new Intent(this, SyncService.class);
         this.startService(i);
         Toast.makeText(this, "Syncing Reports from other users ...", Toast.LENGTH_LONG).show();
+        App_rater.app_launched(this);
 
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -163,7 +166,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if (id == R.id.nav_explore) {
-            Toast.makeText(MainActivity.this,"Coming soon",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Thank you ",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://goo.gl/forms/K0Cbx2kh39d709mG2")));
 //            finish();
             // Handle the camera action
         } else if (id == R.id.nav_report) {

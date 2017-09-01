@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:title="Stages"
+            android:title="Feedback"
             android:id="@+id/nav_explore"
-            android:icon="@drawable/ic_directions">
+            android:icon="@drawable/ic_mail_outline">
 
         </item>
         <item
@@ -23,7 +23,7 @@
 
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/ic_mail_outline"
+            android:icon="@drawable/ic_menu_send"
             android:title="My reports" />
         <!--<item-->
             <!--android:id="@+id/finds"-->
