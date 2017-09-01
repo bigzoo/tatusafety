@@ -50,6 +50,7 @@ public class TweetsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefresher);
         final String traffic = "Ma3Route";
+
        if (haveNetworkConnection() == true){
            getTweets(traffic);
            Toast.makeText(TweetsActivity.this, "Fetching traffic updates ... ", Toast.LENGTH_LONG).show();
