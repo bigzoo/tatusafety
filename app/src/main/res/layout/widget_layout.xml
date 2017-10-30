@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal"
+    android:padding="10dip">
+
+    <TextView
+
+        android:id="@+id/tvRoad"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:paddingBottom ="10dip"
+
+        android:text="Barabara"
+
+        android:textColor="#040404"
+
+        android:textSize="20dip"
+
+        android:textStyle="bold"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <!-- Weather Information-->
+    <TextView
+
+        android:id="@+id/tvSacco"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignLeft="@+id/tvRoad"
+
+        android:layout_below="@+id/tvDate"
+
+        android:layout_centerHorizontal="true"
+
+        android:paddingTop="10dip"
+
+        android:text="Sacco"
+
+        android:textColor="#343434"
+
+        android:textSize="15dip" />
+
+    <TextView
+
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRoad"
+        android:paddingTop="5dip"
+        android:text="Date:"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        />
+
+    <TextView
+
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvDate"
+        android:layout_below="@id/tvRoad"
+        android:paddingTop="5dip"
+        android:text="Time"
+        android:layout_marginLeft="150dp"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        />
+    <TextView
+
+        android:id="@+id/tvPlate"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:paddingTop="10dip"
+        android:text="Number Plate"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        android:layout_below="@+id/tvSacco"
+
+        />
+    <TextView
+
+        android:id="@+id/tvCounty"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:text="County"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        android:layout_below="@+id/tvPlate"
+        />
+    <TextView
+
+        android:id="@+id/tvDesc"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:paddingTop="10dip"
+        android:text="Description"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        android:layout_below="@+id/tvCounty"
+        android:paddingBottom="10dp"
+        />
+    <View
+        android:id="@+id/seperator"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/tvDesc"
+        android:background="#000"
+        />
+
+</RelativeLayout>
