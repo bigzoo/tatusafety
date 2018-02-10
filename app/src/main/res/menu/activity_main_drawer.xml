@@ -26,7 +26,7 @@
             android:icon="@drawable/ic_menu_send"
             android:title="My reports" />
         <!--<item-->
-            <!--android:id="@+id/finds"-->
+            <!--android:id="@+id/maps"-->
             <!--android:icon="@drawable/ic_mail_outline"-->
             <!--android:title="other find me" />-->
 

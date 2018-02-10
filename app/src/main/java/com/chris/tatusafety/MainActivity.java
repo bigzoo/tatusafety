@@ -35,7 +35,7 @@ import com.chris.tatusafety.UI.NewReportActivity;
 import com.chris.tatusafety.UI.Report;
 import com.chris.tatusafety.UI.SettingsActivity;
 import com.chris.tatusafety.UI.SpecificTweetActivity;
-import com.chris.tatusafety.UI.StagesActivity;
+//import com.chris.tatusafety.UI.StagesActivity;
 import com.chris.tatusafety.UI.TweetsActivity;
 import com.chris.tatusafety.UI.Welcome_Activity;
 import com.chris.tatusafety.adapters.CustomListAdapter;
@@ -195,14 +195,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent profile = new Intent(this, AccountActivity.class);
             startActivity(profile);
         }
-//        } else if (id == R.id.finds) {
-//            Intent other = new Intent(this, FindMeActivity.class);
-//            startActivity(other);
-//        }
+//
         else if (id == R.id.twitter) {
             Intent other = new Intent(this, TweetsActivity.class);
             startActivity(other);
         }
+//        } else (id == R.id.maps) {
+//            Intent maps = new Intent(this, MapsActivity.class);
+//            startActivity(maps);
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

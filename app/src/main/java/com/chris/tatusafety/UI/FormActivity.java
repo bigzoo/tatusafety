@@ -8,7 +8,7 @@ import android.location.Location;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.ActionBarActivity;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,7 +34,7 @@ import java.util.Calendar;
 import static com.chris.tatusafety.R.id.submit;
 import static com.google.android.gms.location.LocationServices.FusedLocationApi;
 
-public class FormActivity extends ActionBarActivity implements
+public class FormActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     Calendar calendar;
     SimpleDateFormat simpleDateFormat;
