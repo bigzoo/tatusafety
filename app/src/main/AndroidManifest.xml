@@ -111,11 +111,11 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".UI.StagesActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chris.tatusafety.MainActivity" />
-        </activity>
+        <!--<activity android:name=".UI.StagesActivity">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value="com.chris.tatusafety.MainActivity" />-->
+        <!--</activity>-->
         <activity android:name=".UI.StagesListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -158,13 +158,14 @@
             android:name=".services.FetchAddressIntentService"
             android:exported="false" />
 
-        <!--<meta-data-->
-            <!--android:name="com.google.android.geo.API_KEY"-->
-            <!--android:value="@string/google_maps_key" />-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
-         <meta-data
-         android:name="com.google.android.maps.v2.API_KEY"
-         android:value="AIzaSyB3AAJaVlM3T9K4LKdV2iWNXH2ZJO_W9VA"/>
+        <!--this api key does not work-->
+         <!--<meta-data-->
+         <!--android:name="com.google.android.maps.v2.API_KEY"-->
+         <!--android:value="AIzaSyB3AAJaVlM3T9K4LKdV2iWNXH2ZJO_W9VA"/>-->
         <activity android:name=".UI.Welcome_Activity"></activity>
         <!--<activity android:name=".UI.Compose_Tweet"></activity>-->
     </application>

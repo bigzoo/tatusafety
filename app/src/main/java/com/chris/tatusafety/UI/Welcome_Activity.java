@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,7 +129,12 @@ public class Welcome_Activity extends AppCompatActivity{
 
     private void launchHomeScreen() {
         prefManager.setIsFirstTimeLaunch(false);
-        startActivity(new Intent(Welcome_Activity.this, LoginActivity.class));
+        try{startActivity(new Intent(Welcome_Activity.this, LoginActivity.class));
+
+        }catch (Exception e) {
+            Log.v("kilasi was here", "error eror");
+        }
+
         finish();
         if (Build.VERSION.SDK_INT >= 21) {
             ActivityCompat.requestPermissions(Welcome_Activity.this,
