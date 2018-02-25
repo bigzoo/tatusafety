@@ -111,11 +111,6 @@
             android:enabled="true"
             android:exported="true" />
 
-        <!--<activity android:name=".UI.StagesActivity">-->
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.chris.tatusafety.MainActivity" />-->
-        <!--</activity>-->
         <activity android:name=".UI.StagesListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -129,7 +124,7 @@
                 android:value="com.chris.tatusafety.MainActivity" />
         </activity>
         <activity
-            android:name=".UI.SpeedActivity"
+            android:name=".Stage"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".UI.TweetsActivity"
@@ -158,9 +153,22 @@
             android:name=".services.FetchAddressIntentService"
             android:exported="false" />
 
+        <service android:name=".UI.SpeedActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chris.tatusafety.MainActivity" />
+
+        </service>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"
+            />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key"
+            />
 
         <!--this api key does not work-->
          <!--<meta-data-->
