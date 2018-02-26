@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class SpeedActivity extends Service implements LocationListener, GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener {
 
 
-        private static final long INTERVAL = 1000 * 2;
+        private static final long INTERVAL = 1000 * 4;
         private static final long FASTEST_INTERVAL = 1000 * 1;
         LocationRequest mLocationRequest;
         GoogleApiClient mGoogleApiClient;

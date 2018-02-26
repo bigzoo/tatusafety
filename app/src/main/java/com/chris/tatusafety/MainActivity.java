@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Bind(R.id.tvDesc) TextView mDescr;
     @Bind(R.id.tvPlate) TextView mPlate;
     @Bind(R.id.tvCounty) TextView mCounty;
+    boolean doubleBackToExitPressedOnce = false;
+
 
 
 
@@ -131,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            return;
         }
     }
 
@@ -232,7 +236,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     JSONArray array = new JSONArray(s);
                     for (int x = 0; x < array.length(); x++) {
                         JSONObject obj = array.getJSONObject(x);
+
                         String road = obj.getString("road");
+
                         String sacco = obj.getString("sacco");
                         String date = obj.getString("date");
                         String time = obj.getString("time");

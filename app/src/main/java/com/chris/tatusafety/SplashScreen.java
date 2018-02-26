@@ -17,9 +17,11 @@ import android.widget.TextView;
 import com.chris.tatusafety.UI.HelpActivity;
 import com.chris.tatusafety.UI.LoginActivity;
 import com.chris.tatusafety.UI.Welcome_Activity;
+import com.crashlytics.android.Crashlytics;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.fabric.sdk.android.Fabric;
 
 import static com.chris.tatusafety.R.id.imageView;
 
@@ -30,6 +32,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);

@@ -65,7 +65,7 @@ tools:context="com.chris.tatusafety.UI.LoginActivity"
     android:layout_below="@+id/email_login_button"
     android:layout_alignLeft="@+id/email_login_button"
     android:layout_alignStart="@+id/email_login_button"
-    android:visibility="gone"/>
+    />
 
 
 

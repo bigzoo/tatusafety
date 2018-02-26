@@ -1,9 +1,12 @@
 package com.chris.tatusafety.UI;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,7 +52,31 @@ public class LoginActivity extends AppCompatActivity {
             //if user was logged in it will not be null hence log in into application
             loginSuccess();
         }
-    }
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{Manifest.permission.RECEIVE_SMS},
+                    1);
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{Manifest.permission.RECEIVE_SMS},
+                    1);
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{Manifest.permission.READ_SMS},
+                    1);
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{Manifest.permission.READ_SMS},
+                    1);
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    1);
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    1);
+            }
+            return;
+        }
 
     @Override
     protected void onActivityResult (final int requestCode, final int resultCode, final Intent data){

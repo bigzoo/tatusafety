@@ -48,3 +48,11 @@
 -dontwarn java.nio.**
 -dontwarn java.lang.invoke.**
 -dontwarn rx.**
+
+-keep class com.facebook.FacebookSdk {
+   boolean isInitialized();
+}
+-keep class com.facebook.appevents.AppEventsLogger {
+   com.facebook.appevents.AppEventsLogger newLogger(android.content.Context);
+   void logSdkEvent(java.lang.String, java.lang.Double, android.os.Bundle);
+}
