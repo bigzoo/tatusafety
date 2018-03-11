@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.chris.tatusafety.Stage;
 import com.google.android.gms.common.ConnectionResult;
@@ -18,21 +19,39 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
+
+import static android.content.Intent.getIntent;
+import static com.chris.tatusafety.Stage.p;
 
 public class SpeedActivity extends Service implements LocationListener, GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener {
 
 
-        private static final long INTERVAL = 1000 * 4;
-        private static final long FASTEST_INTERVAL = 1000 * 1;
+        private static final long INTERVAL = 1000 * 2;
+        private static final long FASTEST_INTERVAL = 1000;
         LocationRequest mLocationRequest;
         GoogleApiClient mGoogleApiClient;
         Location mCurrentLocation, lStart, lEnd;
         static double distance = 0;
         double speed;
+//        private ArrayList speeds = new ArrayList();
+        double Kilasi ;
+        String speedReal;
+        Double[] myArray = {0.0};
+//        private Timer mTimer = new Timer();
+//        private int mSecondsPassed = 0;
+        ArrayList<Double> list = new ArrayList<>();
 
 
-        private final IBinder mBinder = new LocalBinder();
+
+    private final IBinder mBinder = new LocalBinder();
 
         @Nullable
         @Override
@@ -85,6 +104,7 @@ public class SpeedActivity extends Service implements LocationListener, GoogleAp
     }
 
 
+
     @Override
     public void onLocationChanged(Location location) {
         Stage.locate.dismiss();
@@ -96,9 +116,13 @@ public class SpeedActivity extends Service implements LocationListener, GoogleAp
             lEnd = mCurrentLocation;
 
         //Calling the method below updates the  live values of distance and speed to the TextViews.
+        //Calling the method below updates the  live values of distance and speed to the TextViews.
         updateUI();
         //calculating the speed with getSpeed method it returns speed in m/s so we are converting it into kmph
         speed = location.getSpeed() * 18 / 5;
+        Kilasi = speed;
+        speedReal = String.valueOf(Kilasi);
+
 
     }
 
@@ -118,17 +142,33 @@ public class SpeedActivity extends Service implements LocationListener, GoogleAp
 
     //The live feed of Distance and Speed are being set in the method below .
     private void updateUI() {
-        if (Stage.p == 0) {
+        if (p == 0) {
             distance = distance + (lStart.distanceTo(lEnd) / 1000.00);
             Stage.endTime = System.currentTimeMillis();
             long diff = Stage.endTime - Stage.startTime;
             diff = TimeUnit.MILLISECONDS.toMinutes(diff);
             Stage.time.setText("Total Time: " + diff + " minutes");
-            if (speed > 0.0)
+            if (speed > 0.0) {
                 Stage.speed.setText("Current speed: " + new DecimalFormat("#.##").format(speed) + " km/hr");
-            else
-                Stage.speed.setText(".......");
+//                new Timer().scheduleAtFixedRate(new TimerTask(){
+//                    @Override
+//                    public void run(){
+//                        while (speed > 0.0 && p == 0 ) {
+//                            list.add(Kilasi);
+//                            list.size();
+//
+//                        }
+//
+//                    }
+//                },0,INTERVAL);
+//                Object maxValue = Collections.max(list);
+////                String Arvid = Double.toString(maxValue);
+////                Log.v(Arvid,"that FDSFDS");
+//                return;
 
+            } else{
+                Stage.speed.setText(".......");
+            }
             Stage.dist.setText(new DecimalFormat("#.###").format(distance) + " Km.");
 
             lStart = lEnd;

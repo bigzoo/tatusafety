@@ -49,6 +49,7 @@ public class Stage extends AppCompatActivity {
     ImageView image;
     public static ProgressDialog locate;
     public static int p = 0;
+    public int running = 0;
 
     private ServiceConnection sc = new ServiceConnection() {
         @Override
@@ -139,6 +140,29 @@ public class Stage extends AppCompatActivity {
             }
             return;
         }
+        checkGps();
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+
+            return;
+        }
+
+
+        if (status == false)
+            //Here, the Location Service gets bound and the GPS Speedometer gets Active.
+            bindService();
+        locate = new ProgressDialog(Stage.this);
+        locate.setIndeterminate(true);
+        locate.setCancelable(false);
+        locate.setMessage("Getting Location...");
+        locate.show();
+        start.setVisibility(View.GONE);
+        pause.setVisibility(View.VISIBLE);
+        pause.setText("Pause");
+
+        stop.setVisibility(View.VISIBLE);
+
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,6 +191,8 @@ public class Stage extends AppCompatActivity {
                 pause.setVisibility(View.VISIBLE);
                 pause.setText("Pause");
                 stop.setVisibility(View.VISIBLE);
+                Bundle bundle = getIntent().getExtras();
+                String message = bundle.getString("running");
 
 
             }

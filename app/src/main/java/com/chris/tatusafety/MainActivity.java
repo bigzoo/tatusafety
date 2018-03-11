@@ -37,6 +37,7 @@ import com.chris.tatusafety.UI.Report;
 import com.chris.tatusafety.UI.SettingsActivity;
 import com.chris.tatusafety.UI.SpecificTweetActivity;
 //import com.chris.tatusafety.UI.StagesActivity;
+import com.chris.tatusafety.UI.SpeedActivity;
 import com.chris.tatusafety.UI.TweetsActivity;
 import com.chris.tatusafety.UI.Welcome_Activity;
 import com.chris.tatusafety.adapters.CustomListAdapter;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Bind(R.id.tvPlate) TextView mPlate;
     @Bind(R.id.tvCounty) TextView mCounty;
     boolean doubleBackToExitPressedOnce = false;
+    public  int running = 0;
 
 
 
