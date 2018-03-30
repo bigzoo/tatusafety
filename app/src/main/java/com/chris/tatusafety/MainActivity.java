@@ -172,14 +172,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if (id == R.id.nav_explore) {
-//            Toast.makeText(MainActivity.this,).show();
-//            startActivity(new Intent(Intent.ACTION_VIEW,
-//                    Uri.parse("https://goo.gl/forms/K0Cbx2kh39d709mG2")));
             Intent speed = new Intent(MainActivity.this,Stage.class);
             startActivity(speed);
             finish();
-            // Handle the camera action
-//            startActivity();
         } else if (id == R.id.nav_report) {
             Intent newReport = new Intent(this, NewReportActivity.class);
             startActivity(newReport);
