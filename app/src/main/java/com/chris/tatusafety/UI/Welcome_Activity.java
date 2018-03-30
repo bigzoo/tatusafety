@@ -132,7 +132,6 @@ public class Welcome_Activity extends AppCompatActivity{
         try{startActivity(new Intent(Welcome_Activity.this, LoginActivity.class));
 
         }catch (Exception e) {
-            Log.v("kilasi was here", "error eror");
         }
 
         finish();

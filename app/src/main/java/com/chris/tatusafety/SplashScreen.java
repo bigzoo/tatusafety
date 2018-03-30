@@ -28,6 +28,7 @@ import static com.chris.tatusafety.R.id.imageView;
 public class SplashScreen extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;
     @Bind(R.id.textView7) TextView mText;
+    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,12 @@ public class SplashScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+        // Checking for first time launch - before calling setContentView()
+        prefManager = new PrefManager(this);
+        if (!prefManager.isFirstTimeLaunch()) {
+            launchLoginScreen();
+            finish();
+        }
         ButterKnife.bind(this);
         Typeface man = Typeface.createFromAsset(getAssets(),"fonts/Lato-Regular.ttf");
             mText.setTypeface(man);
@@ -49,8 +56,7 @@ public class SplashScreen extends AppCompatActivity {
         int y=imageView.getBottom()-imageView.getTop();
         final TranslateAnimation translate = new TranslateAnimation(
                 Animation.ABSOLUTE,0,
-                Animation.ABSOLUTE,
-                x,
+                Animation.ABSOLUTE, x,
                 Animation.ABSOLUTE,y,
                 Animation.ABSOLUTE,1000);//How far it goes
         translate.setDuration(500);//speed of the animation
@@ -119,6 +125,14 @@ public class SplashScreen extends AppCompatActivity {
         });
 
 
+    }
+    private void launchLoginScreen() {
+        prefManager.setIsFirstTimeLaunch(false);
+        try {
+            startActivity(new Intent(SplashScreen.this, LoginActivity.class));
+
+        } catch (Exception e) {
+        }
     }
 }
 
